@@ -1,9 +1,9 @@
 # Retro Game - _Insert game name_
 
 ## Team structure and roles 
-+ Name1 u1234567 - team leader, help page code, morale builder
-+ Name2 u7654321 - note taker, documentation checker, user input
-+ Name3 u3425167 - tricky android code, game state, game graphics rendering
++ Name1 u6293753 - team leader, help page code, morale builder
++ Name2 u6234544 - note taker, documentation checker, user input
++ Name3 u6105656 - tricky android code, game state, game graphics rendering
 
 ## Game Overview 
 
@@ -15,20 +15,20 @@ _Add a paragraph the gives a summary of the game you implemented. Include a smal
 + [Testing Summary](testingsummary)
 
 ## Minuted Meetings
-+ [Meeting 1 - date - decide team structure and game](meeting1)
++ [Meeting 1 - 4/10/2018 - decide team structure and create gitlab repository](meeting1)
 + [Meeting 2 - date - divide up tasks](meeting2)
 + [Meeting 3 - date - consider and plan extension aspects](meeting3)
 + [Meeting 4 - date - review and practice demo](meeting4)
 
 ## Statement of Originality
 
-I _insert name 1_ declare that everything I have submitted in this
+I _Yutong Wang_ declare that everything I have submitted in this
 assignment is entirely my own work, with exceptions given below.
 
-I _insert name 2_ declare that everything I have submitted in this
+I _Xuan Feng_ declare that everything I have submitted in this
 assignment is entirely my own work, with exceptions given below.
 
-I _insert name 3_ declare that everything I have submitted in this
+I _Xinli Xu_ declare that everything I have submitted in this
 assignment is entirely my own work, with exceptions given below.
 
 ### Inspiration

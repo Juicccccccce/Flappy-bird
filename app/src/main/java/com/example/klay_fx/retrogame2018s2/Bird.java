@@ -30,7 +30,7 @@ public class Bird extends Item {
     public boolean hitBy(Pillars pi){
         // TODO: 2018/10/15
         for (Pillar m : pi) {
-            if (m.pos.distance(pos) < 1.0f/30.0f) return true;
+            if (m.pos.distance(this.pos) < 1.0f/30.0f) return true;
         }
         return false;
     }

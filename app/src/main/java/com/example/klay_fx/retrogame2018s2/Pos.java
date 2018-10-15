@@ -1,5 +1,11 @@
 package com.example.klay_fx.retrogame2018s2;
 
+/**
+ * Pos - a simple xy position on the screen.  The screen
+ * has xy range from 0 to 1, and 0,0 is in the top left corner.
+ *
+ */
+
 public class Pos {
     float x;
     float y;

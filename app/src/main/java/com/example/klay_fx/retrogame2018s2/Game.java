@@ -24,11 +24,12 @@ public class Game {
     //Entities in the game
     private Bird bird;
     private Pillars pillars;
+    private Pos birdStart = new Pos(BIRD_X,BIRD_Y);
 
     private boolean birdHit;
 
     public Game(){
-        bird = new Bird(BIRD_X, BIRD_Y, GameView.birdImg);
+        bird = new Bird(birdStart, GameView.birdImg);
         pillars = new Pillars(); //what input ?
         birdHit = false;
     }
@@ -47,9 +48,9 @@ public class Game {
         if (pillars.size() == 0) {
             pillars.getPillar();
         }
-//        else if(pillars.get(0).pos.x < bird.pos.x) {
-////            pillars.getPillar();
-//        }
+        else if (pillars.size() == 1 && pillars.get(0).pos.x < bird.pos.x) {
+            pillars.getPillar();
+        }
         if(bird.hitBy(pillars)) birdHit = true; //multi lives?
         bird.step();
     }
@@ -67,7 +68,7 @@ public class Game {
     }
 
     public void birdFly() {
-        bird.y -= BIRD_STEP;
+        bird.pos.y -= BIRD_STEP;
         bird.gravity_acc = 0.0005f;
     }
 }

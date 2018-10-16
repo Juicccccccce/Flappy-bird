@@ -40,6 +40,10 @@ public class Bird extends Item {
             speed = i * speed;
         }
     }
+    public void birdFly() {
+        y += Game.BIRD_STEP;
+    }
+
 
     public boolean hitBy(Pillars pi){
         // TODO: 2018/10/15

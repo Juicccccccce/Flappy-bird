@@ -15,23 +15,24 @@ public class Bird extends Item {
     float y;
     int i = 1;
     int speed = 2;
-    Bitmap myImage;
+    Bitmap b;
 
 
-    public Bird(float x, float y) {
+    public Bird(float x, float y, Bitmap b) {
        this.x = x;
        this.y = y;
+       this.b = b;
     }
 
     // draw the Bird
     public void draw(Canvas c , Paint p) {
-        int w = c.getWidth();
-        int h = c.getHeight();
+
+//        int w = c.getWidth();
+//        int h = c.getHeight();
+
 //        float xc = pos.x * w;
 //        float yc = pos.y * h;
-        myImage = BitmapFactory.decodeResource(getResources(),R.drawable.bird);
-        c.drawBitmap(myImage,x,y);
-
+        ;
     }
 
     public void step(boolean hit){

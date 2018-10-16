@@ -35,7 +35,7 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
 
         p = new Paint();
         //set up bitmap
-        birdImg = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
+//        birdImg = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
         this.setOnTouchListener(this);
         observer = new ArrayList<>();
         game = new Game();

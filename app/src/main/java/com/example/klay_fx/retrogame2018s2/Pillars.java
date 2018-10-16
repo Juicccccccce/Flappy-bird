@@ -6,6 +6,10 @@ import android.graphics.Paint;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
+/**
+ * @author Xuan Feng
+ */
 public class Pillars extends ArrayList<Pillar> {
 
     // TODO: how to generate the pillars continuously

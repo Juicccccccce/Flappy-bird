@@ -3,6 +3,10 @@ package com.example.klay_fx.retrogame2018s2;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+
+/**
+ * @author Xuan Feng
+ */
 public class Bird extends Item {
     public static final float STARTX = (1.0f / 2.0f);
     public static final float STARTY = (1.0f / 2.0f);

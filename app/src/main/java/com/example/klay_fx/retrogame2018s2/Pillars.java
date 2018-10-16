@@ -14,9 +14,7 @@ import java.util.Random;
 public class Pillars extends ArrayList<Pillar> {
 
     // TODO: how to generate the pillars continuously
-    Pillars(){
 
-    }
 
     public static final float WHITETOP = (1.0f / 3.0f);
     public static final float PILLARSTEP = 0.03f;
@@ -26,7 +24,7 @@ public class Pillars extends ArrayList<Pillar> {
         Iterator<Pillar> bi = this.iterator();
         while (bi.hasNext()) {
             Pillar b = bi.next();
-            if (b.pos.x > Game.MAXXY) bi.remove();
+            if (b.pos.x < Game.MINXY) bi.remove();
         }
     }
 

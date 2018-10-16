@@ -30,7 +30,6 @@ public class Game {
     public Game(){
         bird = new Bird(BIRD_X, BIRD_Y, GameView.birdImg);
         pillars = new Pillars(); //what input ?
-
         birdHit = false;
     }
 
@@ -45,7 +44,9 @@ public class Game {
 
     public void step() {
         pillars.step();
-
+        if (pillars.get(0).pos.x < bird.pos.x) {
+            pillars.getPillar();
+        }
         if(bird.hitBy(pillars)) birdHit = true; //multi lives?
         bird.step();
     }

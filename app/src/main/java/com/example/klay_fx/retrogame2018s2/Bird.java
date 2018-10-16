@@ -38,17 +38,17 @@ public class Bird extends Item {
     }
 
     public void step(){
-        // TODO: 2018/10/15
         y += Game.BIRD_STEP + gravity_acc;
         gravity_acc += 0.005;
     }
 
 
     public boolean hitBy(Pillars pi){
-        // TODO: 2018/10/15
-        for (Pillar m : pi) {
-            if (m.pos.distance(this.pos) < 1.0f/30.0f) return true;
-        }
+        // TODO: Has Problem
+//        if (pi == null) return false;
+//        for (Pillar m : pi) {
+//            if (m.pos.distance(this.pos) < 1.0f/30.0f) return true;
+//        }
         return false;
     }
 }

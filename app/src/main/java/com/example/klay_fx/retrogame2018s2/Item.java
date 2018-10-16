@@ -7,6 +7,8 @@ import android.graphics.Canvas;
  * Item - a single drawable item located at a particular position in the game area
  */
 
+
+
 public abstract class Item {
     Pos pos;
 

@@ -3,6 +3,10 @@ package com.example.klay_fx.retrogame2018s2;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+
+/**
+ * @author Xuan Feng
+ */
 public class Pillar extends Item {
     public static final float PILLARWIDTH = (1.0f / 20.0f);
     public static final float WHITETOP = (1.0f / 3.0f);

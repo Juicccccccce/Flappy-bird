@@ -6,11 +6,24 @@ import android.os.Bundle;
 /**
  * @author Xuan Feng
  */
-public class GameActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity implements GameOver {
+
+    GameView gameView;
+    Game game; //?
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        gameView = findViewById(R.id.gameview);
+        game = gameView.game; //?
+        gameView.registerGameOver(this);
+    }
+
+    @Override
+    public void gameOver() {
+        setResult(RESULT_OK);
+        finish();
     }
 }

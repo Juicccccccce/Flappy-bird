@@ -42,8 +42,10 @@ public class Bird extends Item {
 
     public void step(){
         // TODO: 2018/10/15
-        y += Game.BIRD_STEP;
-//            this.pos.y += 5*speed*i;
+        //y += Game.BIRD_STEP;
+        y += Game.BIRD_STEP*i/40;
+        i ++;
+//            y += 5*speed*i;
 //            i = i +1;
 //            speed = i * speed;
     }

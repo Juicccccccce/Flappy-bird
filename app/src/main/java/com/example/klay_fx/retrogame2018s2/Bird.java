@@ -7,7 +7,7 @@ public class Bird extends Item {
     public static final float STARTX = (1.0f / 2.0f);
     public static final float STARTY = (1.0f / 2.0f);
 
-    public static final float BIRDSTEP = 0.05f;
+    public static final float BIRDSTEP = 0.05f;    //auto dump
 
     public Bird() {
         pos = new Pos(STARTX,STARTY);
@@ -25,6 +25,7 @@ public class Bird extends Item {
 
     public void step(){
         // TODO: 2018/10/15
+
     }
 
     public boolean hitBy(Pillars pi){

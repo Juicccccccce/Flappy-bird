@@ -19,7 +19,7 @@ public class Bird extends Item {
 
     public Bird(Pos p, Bitmap b) {
         this.b = b;
-        pos = new Pos(p);
+        pos = p;
         width = 0.1f;
         height = 0.05f;
     }
@@ -42,7 +42,22 @@ public class Bird extends Item {
     public boolean hitBy(Pillars pi){
         // TODO: Has Problem
         for (Pillar m : pi) {
-            if (m.pos.distance(this.pos) < 1.0f/50.0f) return true;
+            float left = m.pos.x - Pillar.PILLARWIDTH/2;
+            float right = m.pos.x + Pillar.PILLARWIDTH/2;
+            float whiteTop = m.pos.y - 0.15f;
+            float whiteBottom = m.pos.y + 0.15f;
+
+            float birdRight = pos.x + width/2;
+            float birdLeft = pos.x - width/2;
+            float birdTop = pos.y - height/2;
+            float birdBottom = pos.y + height/2;
+
+            if (birdRight > left && birdLeft < right && birdTop < whiteTop ){
+                return true;
+            }
+            if (birdRight > left && birdLeft < right && birdBottom > whiteBottom){
+                return true;
+            }
         }
         return false;
     }

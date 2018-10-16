@@ -14,8 +14,7 @@ import java.util.Random;
  */
 public class Pillar extends Item {
     public static final float PILLARWIDTH = (1.0f / 8.0f);
-    public static final float WHITETOP = (1.0f / 3.0f);
-    public static final float WHITEBOTTOM = (2.0f / 3.0f);
+
 
     public Pillar(Pos p) {
         pos = new Pos(p);
@@ -31,10 +30,12 @@ public class Pillar extends Item {
         float xc = pos.x * w;
         float yc = pos.y * h ;
         float left = xc - PILLARWIDTH/2*w;
-        float right = xc + PILLARWIDTH/2*h;
+        float right = xc + PILLARWIDTH/2*w;
 
-        float whitetop = yc - 0.1f * h;
-        float whitebottom = yc + 0.1f * h;
+
+        float whitetop = yc - 0.14f * h;
+        float whitebottom = yc + 0.14f * h;
+
 
         p.setColor(Color.GREEN);
         c.drawRect(left,0.0f,right,whitetop,p);

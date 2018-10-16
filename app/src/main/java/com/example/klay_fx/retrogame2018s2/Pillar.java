@@ -34,6 +34,6 @@ public class Pillar extends Item {
         float whitebottom = yc + 0.1f * h;
 
         c.drawRect(left,0.0f,right,whitetop,p);
-        c.drawRect(left,0.0f,right,whitebottom,p);
+        c.drawRect(left,whitebottom,right,1.0f,p);
     }
 }

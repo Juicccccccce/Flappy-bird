@@ -13,6 +13,10 @@ import android.view.View;
 public class Bird extends Item {
     float x;
     float y;
+
+    float width;
+    float height;
+
     int i = 1;
     int speed = 2;
     Bitmap b;
@@ -22,18 +26,26 @@ public class Bird extends Item {
        this.x = x;
        this.y = y;
        this.b = b;
+
+       width = 0.1f;
+       height = 0.05f;
     }
 
     // draw the Bird
     public void draw(Canvas c , Paint p) {
+        float cw = c.getWidth();
+        float ch = c.getHeight();
+
+        b = Bitmap.createScaledBitmap(b, (int) (width * cw), (int) (height * ch), true);
         c.drawBitmap(b, x, y,p);
     }
 
-    public void step(boolean hit){
+    public void step(){
         // TODO: 2018/10/15
-            this.pos.y += 5*speed*i;
-            i = i +1;
-            speed = i * speed;
+        y += Game.BIRD_STEP;
+//            this.pos.y += 5*speed*i;
+//            i = i +1;
+//            speed = i * speed;
     }
 
 

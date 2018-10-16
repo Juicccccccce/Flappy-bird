@@ -1,10 +1,8 @@
 package com.example.klay_fx.retrogame2018s2;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.View;
 
 
 /**
@@ -17,7 +15,7 @@ public class Bird extends Item {
     float width;
     float height;
 
-    public float i = 0.0005f;
+    public float gravity_acc = 0.0005f;
     Bitmap b;
 
 
@@ -41,8 +39,8 @@ public class Bird extends Item {
 
     public void step(){
         // TODO: 2018/10/15
-        y += Game.BIRD_STEP + i;
-        i += 0.0002;
+        y += Game.BIRD_STEP + gravity_acc;
+        gravity_acc += 0.005;
     }
 
 

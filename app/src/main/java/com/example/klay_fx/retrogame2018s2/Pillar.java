@@ -33,8 +33,8 @@ public class Pillar extends Item {
         float right = xc + PILLARWIDTH/2*w;
 
 
-        float whitetop = yc - 0.14f * h;
-        float whitebottom = yc + 0.14f * h;
+        float whitetop = yc - 0.11f * h;
+        float whitebottom = yc + 0.11f * h;
 
 
         p.setColor(Color.GREEN);

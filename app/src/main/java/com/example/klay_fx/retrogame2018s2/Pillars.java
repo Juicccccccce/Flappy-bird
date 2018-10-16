@@ -32,7 +32,7 @@ public class Pillars extends ArrayList<Pillar> {
         Random r = new Random();
         float y = r.nextFloat()/3 + WHITETOP ;
 
-        this.add(new Pillar(new Pos(Game.MAXXY+Pillar.PILLARWIDTH/2,y)));
+        this.add(new Pillar(new Pos(Game.MAXXY + Pillar.PILLARWIDTH/2,y)));
     }
 
     public void draw(Canvas canvas, Paint paint) {

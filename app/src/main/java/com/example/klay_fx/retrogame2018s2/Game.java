@@ -42,8 +42,14 @@ public class Game {
         bird.draw(c, p); //what parameter?
     }
 
-
+    /**
+     * @function checks whether the game ends, whether a new pillar need to be generated
+     * and makes the items move.
+     */
     public void step() {
+        if(bird.hitBy(pillars)) {
+            birdHit = true;
+        } //multi lives?
         pillars.step();
         if (pillars.size() == 0) {
             pillars.getPillar();
@@ -51,9 +57,6 @@ public class Game {
         else if (pillars.size() == 1 && pillars.get(0).pos.x < bird.pos.x) {
             pillars.getPillar();
         }
-        if(bird.hitBy(pillars)) {
-            birdHit = true;
-        } //multi lives?
         bird.step();
     }
 

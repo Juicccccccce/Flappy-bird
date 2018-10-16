@@ -14,8 +14,9 @@ import java.util.Random;
  */
 public class Pillar extends Item {
     public static final float PILLARWIDTH = (1.0f / 8.0f);
+    Bitmap b;
 
-
+    // TODO: 17/10/18 need bitmap 
     public Pillar(Pos p) {
         pos = new Pos(p);
     }

@@ -13,8 +13,6 @@ import java.util.Random;
  */
 public class Pillars extends ArrayList<Pillar> {
 
-    // TODO: how to generate the pillars continuously
-
 
     public static final float WHITETOP = (1.0f / 3.0f);
     public static final float PILLARSTEP = 0.03f;
@@ -28,6 +26,10 @@ public class Pillars extends ArrayList<Pillar> {
         }
     }
 
+
+    /**
+     * @function add a pillar to the arraylist
+     */
     public void getPillar(){
         Random r = new Random();
         float y = r.nextFloat()/3 + WHITETOP ;

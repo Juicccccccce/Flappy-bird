@@ -39,8 +39,11 @@ public class Bird extends Item {
     }
 
 
+    /**
+     *
+     * @function to check whether the bird hits pillars or the ground
+     */
     public boolean hitBy(Pillars pi){
-        // TODO: Has Problem
         for (Pillar m : pi) {
             float left = m.pos.x - Pillar.PILLARWIDTH/2;
             float right = m.pos.x + Pillar.PILLARWIDTH/2;
@@ -52,12 +55,13 @@ public class Bird extends Item {
             float birdTop = pos.y ;
             float birdBottom = pos.y + height;
 
-            if (birdRight > left && birdLeft < right && birdTop < whiteTop ){
+            if (birdRight >= left && birdLeft <= right && birdTop <= whiteTop ){
                 return true;
             }
-            if (birdRight > left && birdLeft < right && birdBottom > whiteBottom){
+            if (birdRight >= left && birdLeft <= right && birdBottom >= whiteBottom){
                 return true;
             }
+            if (birdBottom >= Game.MAXXY) {return true;}
         }
         return false;
     }

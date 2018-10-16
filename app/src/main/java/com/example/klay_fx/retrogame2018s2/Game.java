@@ -12,10 +12,14 @@ import android.graphics.Paint;
 public class Game {
     public static final float MAXXY = 1.0f;
     public static final float MINXY = 0.0f;
+
+    //starting position of bird
     public static final float BIRD_X = 0.4f; //?
+    public static final float BIRD_Y = 0.5f;
+
     public static final float BIRD_STEP = 0.05f;
 
-    public float bird_y = 0.5f;
+
 
     //Entities in the game
     private Bird bird;
@@ -24,7 +28,7 @@ public class Game {
     private boolean birdHit;
 
     public Game(){
-        bird = new Bird(BIRD_X, bird_y, GameView.birdImg);
+        bird = new Bird(BIRD_X, BIRD_Y, GameView.birdImg);
         pillars = new Pillars(); //what input ?
 
         birdHit = false;
@@ -59,6 +63,6 @@ public class Game {
     }
 
     public void birdFly() {
-        bird_y += BIRD_STEP;
+        bird.y -= BIRD_STEP;
     }
 }

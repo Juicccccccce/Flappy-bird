@@ -18,6 +18,10 @@ public class Bird extends Item {
     float height;
 
     public float i = 0.0005f;
+<<<<<<< HEAD
+=======
+    int v;
+>>>>>>> 7596d6644f048f661dce8e9d5bd1c2f28974756e
     Bitmap b;
 
 
@@ -43,7 +47,13 @@ public class Bird extends Item {
         // TODO: 2018/10/15
         y += Game.BIRD_STEP + i;
         i += 0.0002;
+<<<<<<< HEAD
         System.out.println(i);
+=======
+//            this.pos.y += 5*speed*i;
+//            i = i +1;
+//            speed = i * speed;
+>>>>>>> 7596d6644f048f661dce8e9d5bd1c2f28974756e
     }
 
 

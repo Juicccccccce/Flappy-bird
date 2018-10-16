@@ -64,5 +64,6 @@ public class Game {
 
     public void birdFly() {
         bird.y -= BIRD_STEP;
+        bird.i = 0.0005f;
     }
 }

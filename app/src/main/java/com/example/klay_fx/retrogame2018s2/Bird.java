@@ -17,18 +17,17 @@ public class Bird extends Item {
     float width;
     float height;
 
-    int i = 1;
-    int speed = 2;
+    public float i = 0.0005f;
     Bitmap b;
 
 
     public Bird(float x, float y, Bitmap b) {
-       this.x = x;
-       this.y = y;
-       this.b = b;
+        this.x = x;
+        this.y = y;
+        this.b = b;
 
-       width = 0.1f;
-       height = 0.05f;
+        width = 0.1f;
+        height = 0.05f;
     }
 
     // draw the Bird
@@ -42,12 +41,9 @@ public class Bird extends Item {
 
     public void step(){
         // TODO: 2018/10/15
-        //y += Game.BIRD_STEP;
-        y += Game.BIRD_STEP*i/40;
-        i ++;
-//            y += 5*speed*i;
-//            i = i +1;
-//            speed = i * speed;
+        y += Game.BIRD_STEP + i;
+        i += 0.0002;
+        System.out.println(i);
     }
 
 

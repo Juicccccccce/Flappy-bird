@@ -1,5 +1,7 @@
 package com.example.klay_fx.retrogame2018s2;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
@@ -8,38 +10,36 @@ import android.graphics.Paint;
  * @author Xuan Feng, Xinli Xu
  */
 public class Bird extends Item {
-    public static final float STARTX = (1.0f / 2.0f);
-    public static final float STARTY = (1.0f / 2.0f);
+    float x;
+    float y;
     int i = 1;
     int speed = 2;
+    Bitmap myImage;
 
 
-    public Bird() {
-        pos = new Pos(STARTX,STARTY);
+    public Bird(float x, float y) {
+       this.x = x;
+       this.y = y;
     }
 
     // draw the Bird
     public void draw(Canvas c , Paint p) {
         int w = c.getWidth();
         int h = c.getHeight();
+//        float xc = pos.x * w;
+//        float yc = pos.y * h;
+        myImage = BitmapFactory.decodeResource(getResources(),R.drawable.bird);
+        c.drawBitmap(myImage,x,y);
 
-        float xc = pos.x * w;
-        float yc = pos.y * h;
-//        c.drawBitmap();      draw the picture of the bird.
     }
 
     public void step(boolean hit){
         // TODO: 2018/10/15
-        if (hit) {
-            this.pos.y = this.pos.y - (1.0f/7.0f);
-            speed = 0;
-            i = 1;
-        } else {
             this.pos.y += 5*speed*i;
             i = i +1;
             speed = i * speed;
-        }
     }
+
     public void birdFly() {
         y += Game.BIRD_STEP;
     }

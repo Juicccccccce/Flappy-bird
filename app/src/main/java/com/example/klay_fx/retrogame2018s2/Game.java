@@ -58,9 +58,6 @@ public class Game {
         return true;
     }
 
-    /**
-     * Adjust the y pos of bird when tap the screen
-     */
     public void birdFly() {
         bird_y += BIRD_STEP;
     }

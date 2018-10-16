@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class GameView extends View implements View.OnTouchListener, Runnable{
 
-    public static final int DELAY_TIME = 100;
+    public static final int DELAY_TIME = 120;
 
     Paint p;
     Game game;
@@ -39,6 +39,9 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
         this.setOnTouchListener(this);
         observer = new ArrayList<>();
         game = new Game();
+
+        repaintHandler = new Handler();
+        repaintHandler.postDelayed(this, DELAY_TIME);
     }
 
     @Override
@@ -61,7 +64,11 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
 //            System.out.println("hi");
-            game.birdFly(); // bird moves up
+            for(int i = 0; i < 7; i++) {
+                game.birdFly(); // bird moves up
+                this.invalidate();
+
+            }
         }
         return true;
     }

@@ -17,7 +17,7 @@ public class Game {
     public static final float BIRD_X = 0.4f; //?
     public static final float BIRD_Y = 0.5f;
 
-    public static final float BIRD_STEP = 0.2f;
+    public static final float BIRD_STEP = 0.02f;
 
 
 

@@ -37,7 +37,7 @@ public class Bird extends Item {
         float ch = c.getHeight();
 
         b = Bitmap.createScaledBitmap(b, (int) (width * cw), (int) (height * ch), true);
-        c.drawBitmap(b, x, y,p);
+        c.drawBitmap(b, x * cw, y * ch,p);
     }
 
     public void step(){

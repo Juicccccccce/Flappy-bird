@@ -22,6 +22,8 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
 
     Paint p;
     Game game;
+
+    // use the observer design pattern here.
     ArrayList<GameOver> observer;
     Handler repaintHandler;
 
@@ -34,17 +36,43 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
         p = new Paint();
         //set up bitmap
         myBird = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
-
         this.setOnTouchListener(this);
     }
 
-    @Override
-    public boolean onTouch(View view, MotionEvent motionEvent) {
+
+    public boolean step() {
+        game.step();
+        if(game.isBirdHit()) {
+            showGameOver();
+            return false;
+        } // not ending
+        this.invalidate();
         return true;
     }
 
     @Override
-    public void run() {
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+            game.birdFly(); // bird moves up
+        }
+        return true;
+    }
 
+    private void showGameOver() {
+        for(GameOver o : observer) {
+            o.gameOver();
+        }
+    }
+
+    // register gameover
+    public void registerGameOver(GameOver gameOver) {
+        observer.add(gameOver);
+    }
+
+    @Override
+    public void run() {
+        if(step()) {
+            repaintHandler.postDelayed(this, DELAY_TIME);
+        }
     }
 }

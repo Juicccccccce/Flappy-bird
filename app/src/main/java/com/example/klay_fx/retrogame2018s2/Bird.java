@@ -13,7 +13,6 @@ public class Bird extends Item {
     int i = 1;
     int speed = 2;
 
-    public static final float BIRDSTEP = 0.05f;    //auto dump
 
     public Bird() {
         pos = new Pos(STARTX,STARTY);

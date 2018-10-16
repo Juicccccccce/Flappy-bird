@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+
+/**
+ * @author Xuan Feng
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

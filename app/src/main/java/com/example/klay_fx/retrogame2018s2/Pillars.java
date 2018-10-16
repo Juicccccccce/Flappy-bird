@@ -5,6 +5,7 @@ import android.graphics.Paint;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Random;
 
 
 /**
@@ -17,7 +18,7 @@ public class Pillars extends ArrayList<Pillar> {
 
     }
 
-
+    public static final float WHITETOP = (1.0f / 3.0f);
     public static final float PILLARSTEP = 0.03f;
 
     public void step() {
@@ -27,6 +28,13 @@ public class Pillars extends ArrayList<Pillar> {
             Pillar b = bi.next();
             if (b.pos.x > Game.MAXXY) bi.remove();
         }
+    }
+
+    public void getPillar(){
+        Random r = new Random();
+        float y = r.nextFloat()/3 + WHITETOP ;
+
+        this.add(new Pillar(new Pos(1,y)));
     }
 
     public void draw(Canvas canvas, Paint paint) {

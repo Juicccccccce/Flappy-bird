@@ -24,7 +24,7 @@ public class Pillars extends ArrayList<Pillar> {
         Iterator<Pillar> bi = this.iterator();
         while (bi.hasNext()) {
             Pillar b = bi.next();
-            if (b.pos.x < Game.MINXY) bi.remove();
+            if (b.pos.x < (Game.MINXY - Pillar.PILLARWIDTH/2)) bi.remove();
         }
     }
 
@@ -32,7 +32,7 @@ public class Pillars extends ArrayList<Pillar> {
         Random r = new Random();
         float y = r.nextFloat()/3 + WHITETOP ;
 
-        this.add(new Pillar(new Pos(1.0f,y)));
+        this.add(new Pillar(new Pos(Game.MAXXY+Pillar.PILLARWIDTH/2,y)));
     }
 
     public void draw(Canvas canvas, Paint paint) {

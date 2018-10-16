@@ -13,7 +13,7 @@ import java.util.Random;
  * @author Xuan Feng
  */
 public class Pillar extends Item {
-    public static final float PILLARWIDTH = (1.0f / 10.0f);
+    public static final float PILLARWIDTH = (1.0f / 8.0f);
     public static final float WHITETOP = (1.0f / 3.0f);
     public static final float WHITEBOTTOM = (2.0f / 3.0f);
 

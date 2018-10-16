@@ -44,9 +44,12 @@ public class Game {
 
     public void step() {
         pillars.step();
-        if (pillars.get(0).pos.x < bird.pos.x) {
+        if (pillars.size() == 0) {
             pillars.getPillar();
         }
+//        else if(pillars.get(0).pos.x < bird.pos.x) {
+////            pillars.getPillar();
+//        }
         if(bird.hitBy(pillars)) birdHit = true; //multi lives?
         bird.step();
     }

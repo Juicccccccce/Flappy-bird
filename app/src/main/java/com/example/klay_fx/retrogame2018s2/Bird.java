@@ -45,7 +45,6 @@ public class Bird extends Item {
 
     public boolean hitBy(Pillars pi){
         // TODO: Has Problem
-//        if (pi == null) return false;
 //        for (Pillar m : pi) {
 //            if (m.pos.distance(this.pos) < 1.0f/30.0f) return true;
 //        }

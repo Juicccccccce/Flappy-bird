@@ -29,16 +29,20 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
     Handler repaintHandler;
 
     public static Bitmap birdImg;
+    public static Bitmap pillarImg;
 
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         p = new Paint();
+
         //set up bitmap
         birdImg = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
         this.setOnTouchListener(this);
         observer = new ArrayList<>();
         game = new Game();
+
+        pillarImg = BitmapFactory.decodeResource(getResources(), R.drawable.pipe);
 
         repaintHandler = new Handler();
         repaintHandler.postDelayed(this, DELAY_TIME);

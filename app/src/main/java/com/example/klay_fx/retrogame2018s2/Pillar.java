@@ -24,16 +24,16 @@ public class Pillar extends Item {
         int w = c.getWidth();
         int h = c.getHeight();
 
-        Random r = new Random();
+
         float xc = pos.x * w;
+        float yc = pos.y * h ;
         float left = xc - PILLARWIDTH/2;
         float right = xc + PILLARWIDTH/2;
 
-        float yc = r.nextFloat()/3 + WHITETOP ;
-        float whitetop = (yc - 0.1f) * h;
-        float whitebottom = (yc + 0.1f) * h;
+        float whitetop = yc - 0.1f * h;
+        float whitebottom = yc + 0.1f * h;
 
         c.drawRect(left,0.0f,right,whitetop,p);
-        c.drawRect(left,0.0f,right,whitebottom,p);
+        c.drawRect(left,whitebottom,right,1.0f,p);
     }
 }

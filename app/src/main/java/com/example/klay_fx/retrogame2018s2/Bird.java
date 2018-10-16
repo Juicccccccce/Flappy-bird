@@ -26,13 +26,7 @@ public class Bird extends Item {
 
     // draw the Bird
     public void draw(Canvas c , Paint p) {
-
-//        int w = c.getWidth();
-//        int h = c.getHeight();
-
-//        float xc = pos.x * w;
-//        float yc = pos.y * h;
-        ;
+        c.drawBitmap(b, x, y,p);
     }
 
     public void step(boolean hit){

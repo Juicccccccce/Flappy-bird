@@ -31,6 +31,7 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
     public static Bitmap birdImg;
     public static Bitmap pillarImg;
     public static Bitmap pillarImgReversed;
+    public static Bitmap groundImg;
 
     public static Bitmap flowerImg1;
     public static Bitmap flowerImg2;
@@ -48,6 +49,8 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
 
         pillarImg = BitmapFactory.decodeResource(getResources(), R.drawable.pipe);
         pillarImgReversed = BitmapFactory.decodeResource(getResources(), R.drawable.pipereversed);
+
+        groundImg = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
 
         flowerImg1 = BitmapFactory.decodeResource(getResources(), R.drawable.f1);
         flowerImg2 = BitmapFactory.decodeResource(getResources(), R.drawable.f2);
@@ -78,7 +81,6 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
             for(int i = 0; i < 7; i++) {
                 game.birdFly(); // bird moves up
                 this.invalidate();
-
             }
         }
         return true;
@@ -100,5 +102,6 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
         if(step()) {
             repaintHandler.postDelayed(this, DELAY_TIME);
         }
+        GameActivity.counter.setText(Integer.toString(Game.counter));
     }
 }

@@ -33,7 +33,8 @@ public class Pillars extends ArrayList<Pillar> {
      * @function add a pillar to the arraylist
      */
     public void getPillar(){
-        float y = r.nextFloat()/3 + WHITETOP ;
+        Random r = new Random();
+        float y = r.nextFloat()/4 + WHITETOP ;
 
         int type = r.nextInt(2);
         if(type == 0) {

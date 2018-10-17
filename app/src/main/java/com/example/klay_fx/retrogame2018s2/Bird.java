@@ -25,10 +25,10 @@ public class Bird extends Item {
 
 
     public Bird(Pos p) {
-        this.b1 = GameView.birdImg1;
-        this.b2 = GameView.birdImg2;
-        this.b3 = GameView.birdImg3;
-        this.b4 = GameView.birdImg4;
+        this.b1 = SpriteSheet.bird1;
+        this.b2 = SpriteSheet.bird2;
+        this.b3 = SpriteSheet.bird3;
+        this.b4 = SpriteSheet.dead_bird;
         pos = p;
         width = 0.1f;
         height = 0.05f;
@@ -57,17 +57,20 @@ public class Bird extends Item {
             bird_state = 0;
         } else {
             // bird dead
-            b4 = Bitmap.createScaledBitmap(b4, (int) (height * cw), (int) (width * ch), true);
+            b4 = Bitmap.createScaledBitmap(b4, (int) ((height + 0.01f) * cw), (int) ((width - 0.02f) * ch), true);
             c.drawBitmap(b4, pos.x * cw, pos.y * ch, p);
         }
     }
 
-    public void step(){
-        if(Game.gameStart) {
-            v += gravity_acc;
-            pos.y += v;
-        }
+    /**
+     * This method makes the bird moving up OR down
+     * (Only called when game state is 'PLAYING')
+     */
+    public float step(){
+        v += gravity_acc;
+        pos.y += v;
 
+        return pos.y;
     }
 
 

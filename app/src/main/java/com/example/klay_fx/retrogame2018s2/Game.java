@@ -58,6 +58,7 @@ public class Game {
         if(gameStart) {
             if (bird.hitBy(pillars)) {
                 birdHit = true;
+
             } //multi lives?
             if (pillars.size() == 0) {
                 pillars.getPillar();
@@ -69,7 +70,7 @@ public class Game {
             bird.step();
             pillars.step();
         }
-        
+
         if (grounds.size() == 0) {
             grounds.add(new Ground(new Pos(0.5f, 5.6f / 7.0f)));
             grounds.add(new Ground(new Pos(1.5f, 5.6f / 7.0f)));

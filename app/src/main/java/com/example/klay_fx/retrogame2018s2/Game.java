@@ -16,6 +16,8 @@ public class Game {
     //starting position of bird
     public static final float BIRD_X = 0.4f; //?
     public static final float BIRD_Y = 0.5f;
+    public static final float GROUND_Y = 5.6f/7.0f;
+    public static final float BIRD_DYING_SPEED = 0.08f;
 
     //public static final float BIRD_STEP = 0.02f;
     public static int counter = 0;
@@ -58,6 +60,8 @@ public class Game {
         if(gameStart) {
             if (bird.hitBy(pillars)) {
                 birdHit = true;
+                gameStart = false;
+                bird.bird_state = 3;
 
             } //multi lives?
             if (pillars.size() == 0) {
@@ -71,11 +75,16 @@ public class Game {
             pillars.step();
         }
 
+        if(bird.bird_state == 3) {
+            Bird.v = BIRD_DYING_SPEED;
+            bird.step();
+        }
+
         if (grounds.size() == 0) {
-            grounds.add(new Ground(new Pos(0.5f, 5.6f / 7.0f)));
-            grounds.add(new Ground(new Pos(1.5f, 5.6f / 7.0f)));
+            grounds.add(new Ground(new Pos(0.5f, GROUND_Y)));
+            grounds.add(new Ground(new Pos(1.5f, GROUND_Y)));
         } else if (grounds.size() == 1) {
-            grounds.add(new Ground(new Pos(1.45f, 5.6f / 7.0f)));
+            grounds.add(new Ground(new Pos(1.45f, GROUND_Y)));
         }
         grounds.step();
 

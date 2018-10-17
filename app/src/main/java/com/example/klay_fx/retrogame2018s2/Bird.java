@@ -21,7 +21,7 @@ public class Bird extends Item {
     private Bitmap b3;
     private Bitmap b4;
 
-    private int bird_state;
+    public int bird_state;
 
 
     public Bird(Pos p) {
@@ -31,7 +31,7 @@ public class Bird extends Item {
         this.b4 = GameView.birdImg4;
         pos = p;
         width = 0.1f;
-        height = 0.05f;
+        height = 0.06f;
         bird_state = 0;
     }
 
@@ -54,7 +54,7 @@ public class Bird extends Item {
             bird_state = 0;
         } else {
             // bird dead
-            b4 = Bitmap.createScaledBitmap(b4, (int) (height * cw), (int) (width * ch), true);
+            b4 = Bitmap.createScaledBitmap(b4, (int) (height * cw), (int) ((width-0.01f) * ch), true);
             c.drawBitmap(b4, pos.x * cw, pos.y * ch, p);
         }
     }
@@ -63,6 +63,11 @@ public class Bird extends Item {
         if(Game.gameStart) {
             v += gravity_acc;
             pos.y += v;
+        }
+        if(bird_state == 3) {
+            if(pos.y < (Game.GROUND_Y - 2*height)) {
+                pos.y += v;
+            }
         }
 
     }

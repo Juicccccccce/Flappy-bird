@@ -74,12 +74,12 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
 
     public boolean step() {
         game.step();
-        if(game.isBirdHit()) {
-            repaintHandler.postDelayed(this, 100000);
-            showGameOver();
-            return false;
-        } // not ending
         this.invalidate();
+        if(game.isBirdHit()) {
+//            showGameOver();
+            return true;
+        } // not ending
+
         return true;
     }
 
@@ -95,6 +95,7 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
     }
 
     private void showGameOver() {
+        repaintHandler.removeCallbacks(this);
         for(GameOver o : observer) {
             o.gameOver();
         }

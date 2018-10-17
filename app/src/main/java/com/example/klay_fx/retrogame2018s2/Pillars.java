@@ -32,7 +32,7 @@ public class Pillars extends ArrayList<Pillar> {
      */
     public void getPillar(){
         Random r = new Random();
-        float y = r.nextFloat()/3 + WHITETOP ;
+        float y = r.nextFloat()/4 + WHITETOP ;
 
         this.add(new Pillar(new Pos(Game.MAXXY + Pillar.PILLARWIDTH/2,y)));
     }

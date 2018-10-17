@@ -10,7 +10,7 @@
         android:id="@+id/rootRL"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@drawable/background"
+        android:background="@drawable/background1"
         android:orientation="vertical"></RelativeLayout>
 
     <com.example.klay_fx.retrogame2018s2.GameView

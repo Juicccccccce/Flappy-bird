@@ -72,7 +72,6 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
             for(int i = 0; i < 7; i++) {
                 game.birdFly(); // bird moves up
                 this.invalidate();
-
             }
         }
         return true;
@@ -94,5 +93,6 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
         if(step()) {
             repaintHandler.postDelayed(this, DELAY_TIME);
         }
+        GameActivity.counter.setText(Integer.toString(Game.counter));
     }
 }

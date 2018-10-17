@@ -18,6 +18,7 @@ public class Game {
     public static final float BIRD_Y = 0.5f;
 
     public static final float BIRD_STEP = 0.02f;
+    public static int counter = 0;
 
 
 
@@ -56,6 +57,7 @@ public class Game {
         }
         else if (pillars.size() == 1 && pillars.get(0).pos.x < bird.pos.x) {
             pillars.getPillar();
+            counter ++;
         }
         bird.step();
     }

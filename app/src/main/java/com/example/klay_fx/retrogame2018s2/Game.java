@@ -26,12 +26,14 @@ public class Game {
     private Bird bird;
     private Pillars pillars;
     private Pos birdStart = new Pos(BIRD_X,BIRD_Y);
+    private Grounds grounds;
 
     private boolean birdHit;
 
     public Game(){
         bird = new Bird(birdStart, GameView.birdImg);
         pillars = new Pillars(); //what input ?
+        grounds = new Grounds();
         birdHit = false;
     }
 
@@ -41,6 +43,7 @@ public class Game {
     public void draw(Canvas c, Paint p) {
         pillars.draw(c, p); // param?
         bird.draw(c, p); //what parameter?
+        grounds.draw(c,p);
     }
 
     /**
@@ -51,15 +54,21 @@ public class Game {
         if(bird.hitBy(pillars)) {
             birdHit = true;
         } //multi lives?
-        pillars.step();
         if (pillars.size() == 0) {
             pillars.getPillar();
-        }
-        else if (pillars.size() == 1 && pillars.get(0).pos.x < bird.pos.x) {
+        } else if (pillars.size() == 1 && pillars.get(0).pos.x < bird.pos.x) {
             pillars.getPillar();
             counter ++;
         }
+        if (grounds.size() == 0){
+            grounds.add(new Ground(new Pos(0.5f,5.6f / 7.0f)));
+            grounds.add(new Ground(new Pos(1.5f,5.6f / 7.0f)));
+        } else if (grounds.size() == 1){
+            grounds.add(new Ground(new Pos(1.3f,5.6f / 7.0f)));
+        }
+        grounds.step();
         bird.step();
+        pillars.step();
     }
 
     /**

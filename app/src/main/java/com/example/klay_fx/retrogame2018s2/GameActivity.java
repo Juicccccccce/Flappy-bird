@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
@@ -14,11 +15,20 @@ import android.widget.TextView;
 public class GameActivity extends AppCompatActivity implements GameOver {
 
     static TextView counter;
+    RelativeLayout relativeLayout = findViewById(R.id.bg);
+    int dayOrNight = 1;
     GameView gameView;
     Game game; //?
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        if (dayOrNight % 2 == 1) {
+//            relativeLayout.setBackgroundResource(R.drawable.background1);
+//            dayOrNight ++;
+//        } else {
+//            relativeLayout.setBackgroundResource(R.drawable.background2);
+//            dayOrNight ++;
+//        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 //        add a textview to show a counter

@@ -17,8 +17,11 @@ public class Game {
     public static final float BIRD_X = 0.4f; //?
     public static final float BIRD_Y = 0.5f;
 
-//    public static final float BIRD_STEP = 0.02f;
+    //public static final float BIRD_STEP = 0.02f;
     public static int counter = 0;
+
+    //
+    public static boolean gameStart = false;
 
 
 
@@ -51,24 +54,30 @@ public class Game {
      * and makes the items move.
      */
     public void step() {
-        if(bird.hitBy(pillars)) {
-            birdHit = true;
-        } //multi lives?
-        if (pillars.size() == 0) {
-            pillars.getPillar();
-        } else if (pillars.size() == 1 && pillars.get(0).pos.x < bird.pos.x) {
-            pillars.getPillar();
-            counter ++;
+
+        if(gameStart) {
+            if (bird.hitBy(pillars)) {
+                birdHit = true;
+            } //multi lives?
+            if (pillars.size() == 0) {
+                pillars.getPillar();
+            } else if (pillars.size() == 1 && pillars.get(0).pos.x < bird.pos.x) {
+                pillars.getPillar();
+                counter++;
+            }
+
+            bird.step();
+            pillars.step();
         }
-        if (grounds.size() == 0){
-            grounds.add(new Ground(new Pos(0.5f,5.6f / 7.0f)));
-            grounds.add(new Ground(new Pos(1.5f,5.6f / 7.0f)));
-        } else if (grounds.size() == 1){
-            grounds.add(new Ground(new Pos(1.45f,5.6f / 7.0f)));
+        
+        if (grounds.size() == 0) {
+            grounds.add(new Ground(new Pos(0.5f, 5.6f / 7.0f)));
+            grounds.add(new Ground(new Pos(1.5f, 5.6f / 7.0f)));
+        } else if (grounds.size() == 1) {
+            grounds.add(new Ground(new Pos(1.45f, 5.6f / 7.0f)));
         }
         grounds.step();
-        bird.step();
-        pillars.step();
+
     }
 
     /**
@@ -86,6 +95,7 @@ public class Game {
     public void birdFly() {
 //        bird.pos.y -= Bird.v;
 //        bird.gravity_acc = 0.0005f;
+        gameStart = true;
         Bird.v = -0.038f;
     }
 }

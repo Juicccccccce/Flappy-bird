@@ -17,17 +17,21 @@ public class Flower {
     private Bitmap f1;
     private Bitmap f2;
 
-    int flowerFrame = 0;
+    // which flower img should use
+    int flowerFrame;
     float x;
     float y;
 
-    int direction = 0;
+    // move up or move down
+    int direction;
 
     Flower(Pos pos) {
         f1 = GameView.flowerImg1;
         f2 = GameView.flowerImg2;
         x = pos.x;
         y = pos.y + 0.2f;
+        direction = 0;
+        flowerFrame = 0;
     }
 
     public void draw(Canvas c, Paint p) {

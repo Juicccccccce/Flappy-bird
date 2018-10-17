@@ -31,7 +31,7 @@ public class Game {
     private boolean birdHit;
 
     public Game(){
-        bird = new Bird(birdStart, GameView.birdImg);
+        bird = new Bird(birdStart);
         pillars = new Pillars(); //what input ?
         grounds = new Grounds();
         birdHit = false;

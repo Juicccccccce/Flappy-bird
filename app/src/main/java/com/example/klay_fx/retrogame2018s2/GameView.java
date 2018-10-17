@@ -28,7 +28,10 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
     ArrayList<GameOver> observer;
     Handler repaintHandler;
 
-    public static Bitmap birdImg;
+    public static Bitmap birdImg1;
+    public static Bitmap birdImg2;
+    public static Bitmap birdImg3;
+
     public static Bitmap pillarImg;
     public static Bitmap pillarImgReversed;
     public static Bitmap groundImg;
@@ -42,7 +45,9 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
         p = new Paint();
 
         //set up bitmap
-        birdImg = BitmapFactory.decodeResource(getResources(), R.drawable.bird);
+        birdImg1 = BitmapFactory.decodeResource(getResources(), R.drawable.bird1);
+        birdImg2 = BitmapFactory.decodeResource(getResources(), R.drawable.bird2);
+        birdImg3 = BitmapFactory.decodeResource(getResources(), R.drawable.bird3);
         this.setOnTouchListener(this);
         observer = new ArrayList<>();
         game = new Game();

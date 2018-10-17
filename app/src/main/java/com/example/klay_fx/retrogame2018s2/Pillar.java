@@ -11,26 +11,40 @@ import java.util.Random;
 
 
 /**
- * @author Xuan Feng
+ * @author Xuan Feng, Yutong Wang
  */
 public class Pillar extends Item {
     public static final float PILLARWIDTH = (1.0f / 8.0f);
     public static final float PILLARHEIGHT = 1.0f;
+    public static final float PILLARSTEP = 0.03f;
 
     Bitmap b1 = GameView.pillarImg;
     Bitmap b2 = GameView.pillarImgReversed;
+
+    Flower flower;
 
     // TODO: 17/10/18 need bitmap 
     public Pillar(Pos p) {
         pos = new Pos(p);
     }
 
+    public Pillar(Pos p, Flower f) {
+        pos = new Pos(p);
+        flower = f;
+    }
+
+    public void step() {
+        pos.x -= PILLARSTEP;
+        if(flower != null) flower.step(pos.x, pos.y);
+    }
+
     // draw the Pillar
     public void draw(Canvas c , Paint p) {
 
+        if(flower != null) flower.draw(c, p);
+
         int w = c.getWidth();
         int h = c.getHeight();
-
 
 
         float xc = pos.x * w;
@@ -42,10 +56,16 @@ public class Pillar extends Item {
         float whitetop = yc - 0.115f * h;
         float whitebottom = yc + 0.115f * h;
 
+
+
+
         b1 = Bitmap.createScaledBitmap(b1, (int) (PILLARWIDTH * w), (int) (PILLARHEIGHT * h), true);
         c.drawBitmap(b1,left,whitetop - PILLARHEIGHT*h,p);
 
         b2 = Bitmap.createScaledBitmap(b2, (int) (PILLARWIDTH * w), (int) (PILLARHEIGHT * h), true);
         c.drawBitmap(b2,left,whitebottom,p);
+
+
+
     }
 }

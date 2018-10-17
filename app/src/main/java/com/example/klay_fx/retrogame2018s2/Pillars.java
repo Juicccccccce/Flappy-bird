@@ -15,10 +15,12 @@ public class Pillars extends ArrayList<Pillar> {
 
 
     public static final float WHITETOP = (1.0f / 3.0f);
-    public static final float PILLARSTEP = 0.03f;
+    public static final float PILLAR_START_X = Game.MAXXY + Pillar.PILLARWIDTH / 2;
+    private Random r = new Random();
+
 
     public void step() {
-        for (Pillar b : this) b.pos.x -= PILLARSTEP;
+        for (Pillar b : this) b.step();
         Iterator<Pillar> bi = this.iterator();
         while (bi.hasNext()) {
             Pillar b = bi.next();
@@ -31,10 +33,15 @@ public class Pillars extends ArrayList<Pillar> {
      * @function add a pillar to the arraylist
      */
     public void getPillar(){
-        Random r = new Random();
         float y = r.nextFloat()/3 + WHITETOP ;
 
-        this.add(new Pillar(new Pos(Game.MAXXY + Pillar.PILLARWIDTH/2,y)));
+        int type = r.nextInt(2);
+        if(type == 0) {
+
+            this.add(new Pillar(new Pos(PILLAR_START_X, y)));
+        } else {
+            this.add(new Pillar(new Pos(PILLAR_START_X, y), new Flower(new Pos(PILLAR_START_X, y))));
+        }
     }
 
     public void draw(Canvas canvas, Paint paint) {

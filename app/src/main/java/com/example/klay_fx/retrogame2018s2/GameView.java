@@ -32,6 +32,9 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
     public static Bitmap pillarImg;
     public static Bitmap pillarImgReversed;
 
+    public static Bitmap flowerImg1;
+    public static Bitmap flowerImg2;
+
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
@@ -45,6 +48,9 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
 
         pillarImg = BitmapFactory.decodeResource(getResources(), R.drawable.pipe);
         pillarImgReversed = BitmapFactory.decodeResource(getResources(), R.drawable.pipereversed);
+
+        flowerImg1 = BitmapFactory.decodeResource(getResources(), R.drawable.f1);
+        flowerImg2 = BitmapFactory.decodeResource(getResources(), R.drawable.f2);
 
         repaintHandler = new Handler();
         repaintHandler.postDelayed(this, DELAY_TIME);

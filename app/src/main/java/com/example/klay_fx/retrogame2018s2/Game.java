@@ -6,7 +6,7 @@ import android.graphics.Paint;
 /**
  * Game - this is the model of the main game.
  *
- * @author Xuan Feng
+ * @author Xuan Feng, Yutong Wang
  */
 
 public class Game {

@@ -6,7 +6,7 @@ import android.graphics.Paint;
 
 
 /**
- * @author Xuan Feng, Xinli Xu
+ * @author Xuan Feng, Xinli Xu, Yutong Wang.
  */
 public class Bird extends Item {
 

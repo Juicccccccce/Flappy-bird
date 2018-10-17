@@ -79,6 +79,11 @@ public class Bird extends Item {
             if (birdRight >= left && birdLeft <= right && birdBottom >= whiteBottom){
                 return true;
             }//hit bottom pipe
+            if (m.flower != null){
+                if (birdRight >= left && birdLeft <= right && birdBottom >= m.flower.y){
+                    return true;
+                }
+            }
             if (birdBottom >= (5.5f / 7.0f) ) {return true;}// hit ground
         }
         return false;

@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
 
+/**
+ * @author Xuan Feng
+ */
 public class Grounds extends ArrayList<Ground> {
     public static final float GROUNDSTEP = 0.03f;
 

@@ -4,6 +4,10 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+/**
+ * @author Xuan Feng
+ * to make the ground move
+ */
 public class Ground extends Item {
     public static final float GROUNDHEIGHT = 1.0f / 5.0f;
 

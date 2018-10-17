@@ -47,8 +47,8 @@ public class Bird extends Item {
         for (Pillar m : pi) {
             float left = m.pos.x - Pillar.PILLARWIDTH/2;
             float right = m.pos.x + Pillar.PILLARWIDTH/2;
-            float whiteTop = m.pos.y - 0.11f;
-            float whiteBottom = m.pos.y + 0.11f;
+            float whiteTop = m.pos.y - 0.115f;
+            float whiteBottom = m.pos.y + 0.115f;
 
             float birdRight = pos.x + width;
             float birdLeft = pos.x ;

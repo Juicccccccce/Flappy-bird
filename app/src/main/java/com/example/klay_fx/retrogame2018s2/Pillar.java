@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+import java.io.InputStream;
 import java.util.Random;
 
 
@@ -14,7 +15,10 @@ import java.util.Random;
  */
 public class Pillar extends Item {
     public static final float PILLARWIDTH = (1.0f / 8.0f);
-    Bitmap b;
+    public static final float PILLARHEIGHT = 1.0f;
+
+    Bitmap b1 = GameView.pillarImg;
+    Bitmap b2 = GameView.pillarImgReversed;
 
     // TODO: 17/10/18 need bitmap 
     public Pillar(Pos p) {
@@ -28,18 +32,20 @@ public class Pillar extends Item {
         int h = c.getHeight();
 
 
+
         float xc = pos.x * w;
         float yc = pos.y * h ;
         float left = xc - PILLARWIDTH/2*w;
         float right = xc + PILLARWIDTH/2*w;
 
 
-        float whitetop = yc - 0.11f * h;
-        float whitebottom = yc + 0.11f * h;
+        float whitetop = yc - 0.115f * h;
+        float whitebottom = yc + 0.115f * h;
 
+        b1 = Bitmap.createScaledBitmap(b1, (int) (PILLARWIDTH * w), (int) (PILLARHEIGHT * h), true);
+        c.drawBitmap(b1,left,whitetop - PILLARHEIGHT*h,p);
 
-        p.setColor(Color.GREEN);
-        c.drawRect(left,0.0f,right,whitetop,p);
-        c.drawRect(left,whitebottom,right,h,p);
+        b2 = Bitmap.createScaledBitmap(b2, (int) (PILLARWIDTH * w), (int) (PILLARHEIGHT * h), true);
+        c.drawBitmap(b2,left,whitebottom,p);
     }
 }

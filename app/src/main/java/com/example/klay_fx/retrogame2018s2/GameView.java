@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class GameView extends View implements View.OnTouchListener, Runnable{
 
-    public static final int DELAY_TIME = 120;
+    public static final int DELAY_TIME = 80;
 
     Paint p;
     Game game;

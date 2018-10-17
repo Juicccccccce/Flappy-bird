@@ -17,7 +17,7 @@ public class Game {
     public static final float BIRD_X = 0.4f; //?
     public static final float BIRD_Y = 0.5f;
 
-    public static final float BIRD_STEP = 0.02f;
+//    public static final float BIRD_STEP = 0.02f;
     public static int counter = 0;
 
 
@@ -84,7 +84,8 @@ public class Game {
     }
 
     public void birdFly() {
-        bird.pos.y -= BIRD_STEP;
-        bird.gravity_acc = 0.0005f;
+//        bird.pos.y -= Bird.v;
+//        bird.gravity_acc = 0.0005f;
+        Bird.v = -0.038f;
     }
 }

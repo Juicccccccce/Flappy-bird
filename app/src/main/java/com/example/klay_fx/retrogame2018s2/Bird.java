@@ -10,13 +10,15 @@ import android.graphics.Paint;
  */
 public class Bird extends Item {
 
-    float width;
-    float height;
+    private float width;
+    private float height;
 
-    public float gravity_acc = 0.0005f;
-    Bitmap b1;
-    Bitmap b2;
-    Bitmap b3;
+    public static float gravity_acc = 0.0055f;
+    public static float v = 0.02f;
+
+    private Bitmap b1;
+    private Bitmap b2;
+    private Bitmap b3;
 
     private int bird_state;
 
@@ -52,8 +54,9 @@ public class Bird extends Item {
     }
 
     public void step(){
-        pos.y += Game.BIRD_STEP + gravity_acc;
-        gravity_acc += 0.005;
+        v += gravity_acc;
+        pos.y += v;
+
     }
 
 

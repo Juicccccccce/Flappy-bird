@@ -37,7 +37,7 @@ public class Pillar extends Item {
         float whitebottom = yc + 0.1f * h;
 
         p.setColor(Color.GREEN);
-        c.drawRect(left,0.0f,right,whitetop,p);
-        c.drawRect(left,whitebottom,right,h,p);
+        c.drawBitmap(GameView.pillarImg,right,whitetop,p);
+        c.drawBitmap(GameView.pillarImg,whitebottom,right,p);
     }
 }

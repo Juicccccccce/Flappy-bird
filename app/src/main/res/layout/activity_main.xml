@@ -17,5 +17,6 @@
         android:layout_marginStart="95dp"
         android:layout_marginTop="58dp"
         android:onClick="playGame"
-        android:id="@+id/button" />
+        android:id="@+id/button"
+        tools:ignore="UnknownId" />
 </android.support.constraint.ConstraintLayout>

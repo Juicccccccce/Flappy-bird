@@ -43,8 +43,8 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
         game = new Game();
 
         pillarImg = BitmapFactory.decodeResource(getResources(), R.drawable.pipe);
-//        Canvas c = new Canvas();
-//        c.drawBitmap(pillarImg,c.getWidth()/2,c.getHeight()/2,p);
+        Canvas c = new Canvas();
+        //c.drawBitmap(pillarImg,c.getWidth()/2,c.getHeight()/2,p);
 
         repaintHandler = new Handler();
         repaintHandler.postDelayed(this, DELAY_TIME);

@@ -54,8 +54,10 @@ public class Bird extends Item {
     }
 
     public void step(){
-        v += gravity_acc;
-        pos.y += v;
+        if(Game.gameStart) {
+            v += gravity_acc;
+            pos.y += v;
+        }
 
     }
 

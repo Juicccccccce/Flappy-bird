@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.io.InputStream;
 
 /**
- * @author Xuan Feng
+ * @author Xuan Feng, Yutong Wang
  */
 public class GameActivity extends AppCompatActivity implements GameOver {
 
@@ -22,10 +22,11 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     static int dayOrNight = 1;
     GameView gameView;
     Game game; //?
-    private ImageButton pause;
     private boolean isPause = false;
 
     ImageView scoreboard;
+    ImageButton restart;
+    ImageButton backToMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +34,15 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        ImageView scoreboard = findViewById(R.id.imageView2);
+        scoreboard = findViewById(R.id.imageView2);
         scoreboard.setVisibility(View.INVISIBLE);
 
-        pause = findViewById(R.id.imageButton3);
+        restart = findViewById(R.id.restart);
+        restart.setVisibility(View.INVISIBLE);
+
+        backToMenu = findViewById(R.id.backtomenu);
+        backToMenu.setVisibility(View.INVISIBLE);
+
 
         rl = findViewById(R.id.rootRL);
         if (dayOrNight == 1) {
@@ -79,16 +85,22 @@ public class GameActivity extends AppCompatActivity implements GameOver {
 
     @Override
     public void gameOver() {
-        Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_SHORT).show();
-//        scoreboard.setVisibility(View.VISIBLE);
-        setResult(RESULT_OK);
-        finish();
+//        Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_SHORT).show();
+        scoreboard.setVisibility(View.VISIBLE);
+        restart.setVisibility(View.VISIBLE);
+        backToMenu.setVisibility(View.VISIBLE);
+
+
+//        gameView.repaintHandler.removeCallbacks(gameView);
+
     }
 
+    /**
+     * Handle the pause button click to pause and continue the game.
+     * @param view
+     */
     public void pauseGame(View view) {
-//        if(Game.isPause == false) {
-//            Game.isPause = true;
-//        }
+
         if(!isPause) {
             isPause = true;
             gameView.repaintHandler.removeCallbacks(gameView);
@@ -97,4 +109,22 @@ public class GameActivity extends AppCompatActivity implements GameOver {
             gameView.repaintHandler.postDelayed(gameView, 100);
         }
     }
+
+    /**
+     * 1) Handle the restart button click to restart the game
+     * 2) Handle the backToMenu button click to back to the previous activity
+     * @param view
+     */
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.restart:
+                // TODO: RESTART FUNCTION
+                break;
+            case R.id.backtomenu:
+                setResult(RESULT_OK);
+                finish();
+                break;
+        }
+    }
+
 }

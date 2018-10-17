@@ -5,7 +5,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
@@ -14,13 +16,26 @@ import android.widget.TextView;
 public class GameActivity extends AppCompatActivity implements GameOver {
 
     static TextView counter;
+    RelativeLayout rl;
+    static int dayOrNight = 1;
     GameView gameView;
     Game game; //?
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        rl = findViewById(R.id.rootRL);
+        if (dayOrNight == 1) {
+            rl.setBackgroundResource(R.drawable.background1);
+            dayOrNight --;
+        } else {
+            rl.setBackgroundResource(R.drawable.background2);
+            dayOrNight ++;
+        }
+
 //        add a textview to show a counter
         counter = findViewById(R.id.counter);
         counter.setTextColor(Color.WHITE);

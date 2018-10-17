@@ -25,6 +25,7 @@ public class Grounds extends ArrayList<Ground> {
         }
     }
 
+
     public void draw(Canvas canvas, Paint paint) {
         for (Ground b : this) b.draw(canvas, paint);
     }

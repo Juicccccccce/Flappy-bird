@@ -64,7 +64,7 @@ public class Game {
             grounds.add(new Ground(new Pos(0.5f,5.6f / 7.0f)));
             grounds.add(new Ground(new Pos(1.5f,5.6f / 7.0f)));
         } else if (grounds.size() == 1){
-            grounds.add(new Ground(new Pos(1.3f,5.6f / 7.0f)));
+            grounds.add(new Ground(new Pos(1.45f,5.6f / 7.0f)));
         }
         grounds.step();
         bird.step();

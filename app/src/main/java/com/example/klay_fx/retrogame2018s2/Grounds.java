@@ -25,9 +25,6 @@ public class Grounds extends ArrayList<Ground> {
         }
     }
 
-    public void addGround(){
-        this.add(new Ground(new Pos(1.5f,5.5f / 7.0f)));
-    }
 
     public void draw(Canvas canvas, Paint paint) {
         for (Ground b : this) b.draw(canvas, paint);

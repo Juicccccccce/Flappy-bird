@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //        bitmap = Bitmap.createScaledBitmap(bitmap, (int) (0.1*c.getWidth()), (int) (0.05 * c.getHeight()), true);
 //        c.drawBitmap(bitmap,50,50,p);
         iv.setImageBitmap(moving_bird);
+        iv.setY(0);
 //        Entry_View entry = findViewById(R.id.entry_view);
 //        game = gameView.game; //?
 //        gameView.registerGameOver(this);

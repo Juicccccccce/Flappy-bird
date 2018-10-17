@@ -23,14 +23,6 @@
 
     <ImageView
         android:id="@+id/imageview"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +48,9 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="77dp"
-        android:layout_height="50dp"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
@@ -66,7 +59,7 @@
         android:layout_marginRight="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
-        android:background="@null"
+        android:background="@drawable/start_button"
         android:onClick="playGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,26 +67,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.88"
-        app:srcCompat="@drawable/start_button" />
+        app:srcCompat="@null" />
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="77dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
-        android:background="@null"
+        android:background="@drawable/ranking_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.88"
-        app:srcCompat="@drawable/ranking_button" />
+        app:srcCompat="@null" />
 
 
 </android.support.constraint.ConstraintLayout>

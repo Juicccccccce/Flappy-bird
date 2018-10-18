@@ -11,7 +11,7 @@ _Add a paragraph the gives a summary of the game you implemented. Include a smal
 
 ## Design Documentation 
 + [Design Summary](designsummary)
-+ [Uml diagram](umldiagram)
++ [Uml diagram](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/UML-diagram)
 + [Testing Summary](testingsummary)
 
 ## Minuted Meetings

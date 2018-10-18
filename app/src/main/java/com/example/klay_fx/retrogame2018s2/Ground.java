@@ -11,7 +11,7 @@ import android.graphics.Paint;
 public class Ground extends Item {
     public static final float GROUNDHEIGHT = 1.0f / 5.0f;
 
-    Bitmap b = GameView.groundImg;
+    Bitmap b = SpriteSheet.ground;
 
     public Ground(Pos p) {
         pos = new Pos(p);

@@ -57,11 +57,11 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         backToMenu = findViewById(R.id.backtomenu);
         backToMenu.setVisibility(View.INVISIBLE);
 
-        bestScore = findViewById(R.id.textView4);
-        bestScore.setVisibility(View.INVISIBLE);
-
-        currentScore = findViewById(R.id.textView5);
+        currentScore = findViewById(R.id.textView4);
         currentScore.setVisibility(View.INVISIBLE);
+
+        bestScore = findViewById(R.id.textView5);
+        bestScore.setVisibility(View.INVISIBLE);
 
         pauseButton = findViewById(R.id.pause);
 
@@ -100,7 +100,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         gameover.setVisibility(View.VISIBLE);
         bestScore.setText(String.valueOf(MainActivity.prefs.getInt("1",0)));
         bestScore.setVisibility(View.VISIBLE);
-        currentScore.setText(String.valueOf(counter));
+        currentScore.setText(String.valueOf(Game.counter));
         currentScore.setVisibility(View.VISIBLE);
 
 

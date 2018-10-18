@@ -28,6 +28,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     ImageView scoreboard;
     ImageButton restart;
     ImageButton backToMenu;
+    ImageButton pauseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class GameActivity extends AppCompatActivity implements GameOver {
 
         backToMenu = findViewById(R.id.backtomenu);
         backToMenu.setVisibility(View.INVISIBLE);
+
+        pauseButton = findViewById(R.id.pause);
 
 
         rl = findViewById(R.id.rootRL);
@@ -104,9 +107,11 @@ public class GameActivity extends AppCompatActivity implements GameOver {
 
         if(!isPause) {
             isPause = true;
+            pauseButton.setImageResource(R.drawable.resume);
             gameView.repaintHandler.removeCallbacks(gameView);
         } else {
             isPause = false;
+            pauseButton.setImageResource(R.drawable.pauce);
             gameView.repaintHandler.postDelayed(gameView, 100);
         }
     }

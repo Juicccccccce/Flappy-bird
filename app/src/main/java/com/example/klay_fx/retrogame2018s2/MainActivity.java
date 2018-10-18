@@ -12,26 +12,33 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.prefs.Preferences;
+
 
 /**
  * @author Xuan Feng
  */
 public class MainActivity extends AppCompatActivity {
 
+    static Preferences prefs = Preferences.userNodeForPackage(Game.class);
+    public static ArrayList<Integer> scoreList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void showRank(View view) {
-        Intent intent_rank = new Intent(this,RankActivity.class);
-        startActivity(intent_rank);
-    }
+
+//    public void showRank(View view) {
+//        Intent intent_rank = new Intent(this,RankActivity.class);
+//        startActivity(intent_rank);
+//    }
 
 
     public void playGame(View view) {
         Log.d("game", "button clicked");
-
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
@@ -39,5 +46,52 @@ public class MainActivity extends AppCompatActivity {
     public void viewRank(View view) {
         Intent intent = new Intent(this, RankActivity.class);
         startActivity(intent);
+    }
+
+    public static void save(){
+        scoreList.add(Game.counter);
+        Collections.sort(scoreList);
+        if (scoreList.size()>3){
+            scoreList.remove(0);
+        }
+
+        for (Integer i : scoreList) {
+            System.out.println(i);
+        }
+
+        if (scoreList.size()==1) {
+            prefs.putInt("1", scoreList.get(0));
+            prefs.putInt("2",0);
+            prefs.putInt("3",0);
+        } else if (scoreList.size()==2){
+            prefs.putInt("1", scoreList.get(1));
+            prefs.putInt("2", scoreList.get(0));
+            prefs.putInt("3",0);
+        } else if (scoreList.size()==3){
+            prefs.putInt("1", scoreList.get(2));
+            prefs.putInt("2", scoreList.get(1));
+            prefs.putInt("3", scoreList.get(0));
+        }
+    }
+
+    public static void load(){
+        int int1 = prefs.getInt("1",0);
+        int int2 = prefs.getInt("2",0);
+        int int3 = prefs.getInt("3",0);
+        if (scoreList.size()!=3){
+            scoreList.add(int1);
+            scoreList.add(int2);
+            scoreList.add(int3);
+        } else {
+            scoreList.clear();
+            scoreList.add(int1);
+            scoreList.add(int2);
+            scoreList.add(int3);
+
+        }
+
+        for (Integer i : scoreList) {
+            System.out.println(i);
+        }
     }
 }

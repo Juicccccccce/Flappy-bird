@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.prefs.Preferences;
 
 /**
@@ -39,7 +40,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        Game.load();
+        MainActivity.load();
 
         scoreboard = findViewById(R.id.imageView2);
         scoreboard.setVisibility(View.INVISIBLE);
@@ -80,7 +81,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     public void gameOver() {
 //        Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_SHORT).show();
         System.out.println("hi");
-        Game.save();
+        MainActivity.save();
         scoreboard.setVisibility(View.VISIBLE);
         restart.setVisibility(View.VISIBLE);
         backToMenu.setVisibility(View.VISIBLE);

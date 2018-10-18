@@ -9,9 +9,13 @@
 + [Overview](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/Overview)
 
 ![Board](app/src/main/res/drawable/show1.png)
+
 ![Board](app/src/main/res/drawable/show2.png)
+
 ![Board](app/src/main/res/drawable/show3.png)
+
 ![Board](app/src/main/res/drawable/show4.png)
+
 ![Board](app/src/main/res/drawable/show5.png)
 
 ## Design Documentation 

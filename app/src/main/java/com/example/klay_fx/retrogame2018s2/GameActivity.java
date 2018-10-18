@@ -102,7 +102,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         bestScore.setVisibility(View.VISIBLE);
         currentScore.setText(String.valueOf(Game.counter));
         currentScore.setVisibility(View.VISIBLE);
-
+        counter.setVisibility(View.INVISIBLE);
 
 //        gameView.repaintHandler.removeCallbacks(gameView);
 

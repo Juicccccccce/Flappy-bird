@@ -15,8 +15,8 @@ _Add a paragraph the gives a summary of the game you implemented. Include a smal
 + [Testing Summary](testingsummary)
 
 ## Minuted Meetings
-+ [Meeting 1 - 4/10/2018 - decide team structure and create gitlab repository](meeting1)
-+ [Meeting 2 - date - divide up tasks](meeting2)
++ [Meeting 1 - 4/10/2018 - decide team structure and create gitlab repository and draw the drafed UML](meeting1)
++ [Meeting 2 - 6/10/2018 - discuss ](meeting2)
 + [Meeting 3 - date - consider and plan extension aspects](meeting3)
 + [Meeting 4 - date - review and practice demo](meeting4)
 

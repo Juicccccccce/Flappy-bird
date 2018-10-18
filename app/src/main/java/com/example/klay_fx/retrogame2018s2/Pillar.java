@@ -18,8 +18,8 @@ public class Pillar extends Item {
     public static final float PILLARHEIGHT = 1.0f;
     public static final float PILLARSTEP = 0.03f;
 
-    Bitmap b1 = GameView.pillarImg;
-    Bitmap b2 = GameView.pillarImgReversed;
+    Bitmap b1 = SpriteSheet.pillar1;
+    Bitmap b2 = SpriteSheet.pillar2;
 
     Flower flower;
 

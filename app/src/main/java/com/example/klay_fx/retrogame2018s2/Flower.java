@@ -26,8 +26,8 @@ public class Flower {
     int direction;
 
     Flower(Pos pos) {
-        f1 = GameView.flowerImg1;
-        f2 = GameView.flowerImg2;
+        f1 = SpriteSheet.flower1;
+        f2 = SpriteSheet.flower2;
         x = pos.x;
         y = pos.y + 0.2f;
         direction = 0;

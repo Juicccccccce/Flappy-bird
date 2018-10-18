@@ -22,21 +22,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Bitmap moving_bird = BitmapFactory.decodeResource(getResources(),R.drawable.bird);
-        ImageView iv = findViewById(R.id.imageview);
-        Canvas c = new Canvas();
-        moving_bird = Bitmap.createScaledBitmap(moving_bird, 100, 80, true);
-        Paint p = new Paint();
-        c.drawBitmap(moving_bird,50.0f,50.0f,p);
+//
+//        Bitmap moving_bird = BitmapFactory.decodeResource(getResources(),R.drawable.bird);
+//        ImageView iv = (ImageView) findViewById(R.id.imageview);
+//        Canvas c = new Canvas();
+//        moving_bird = Bitmap.createScaledBitmap(moving_bird, 100, 80, true);
+//        Paint p = new Paint();
+//        c.drawBitmap(moving_bird,50.0f,50.0f,p);
 
 //        Paint p = new Paint();
 //        Canvas c =new Canvas();
 //        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.bird);
 //        bitmap = Bitmap.createScaledBitmap(bitmap, (int) (0.1*c.getWidth()), (int) (0.05 * c.getHeight()), true);
 //        c.drawBitmap(bitmap,50,50,p);
-        iv.setImageBitmap(moving_bird);
-        iv.setY(0);
+//        iv.setImageBitmap(moving_bird);
+//        iv.setY(c.getHeight()/4);
 //        Entry_View entry = findViewById(R.id.entry_view);
 //        game = gameView.game; //?
 //        gameView.registerGameOver(this);

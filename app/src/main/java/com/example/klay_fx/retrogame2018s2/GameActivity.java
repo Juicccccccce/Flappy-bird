@@ -1,5 +1,6 @@
 package com.example.klay_fx.retrogame2018s2;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -119,6 +120,8 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         switch (view.getId()) {
             case R.id.restart:
                 // TODO: RESTART FUNCTION
+                Intent intent_restart = new Intent(this,GameActivity.class);
+                startActivity(intent_restart);
                 break;
             case R.id.backtomenu:
                 setResult(RESULT_OK);

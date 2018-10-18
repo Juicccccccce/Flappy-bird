@@ -1,9 +1,9 @@
 # Retro Game - _Insert game name_
 
 ## Team structure and roles 
-+ Name1 u6293753 - team leader, help page code, morale builder
-+ Name2 u6234544 - note taker, documentation checker, user input
-+ Name3 u6105656 - tricky android code, game state, game graphics rendering
++ Yutong Wang u6293753 - team leader, help page code, morale builder
++ Xuan Feng u6234544 - note taker, documentation checker, user input
++ Xinli Xu u6105656 - tricky android code, game state, game graphics rendering
 
 ## Game Overview 
 + [Overview](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/Overview)

@@ -8,15 +8,16 @@
 
     <RelativeLayout
         android:id="@+id/rootRL"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/background1"
-        android:orientation="vertical"></RelativeLayout>
-
-    <com.example.klay_fx.retrogame2018s2.GameView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/gameview"/>
+        android:orientation="vertical"/>
+
+    <com.example.klay_fx.retrogame2018s2.GameView
+        android:id="@+id/gameview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/counter"
@@ -38,5 +39,69 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gameview"
         app:layout_constraintVertical_bias="0.13" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="140dp"
+        android:layout_height="96dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="276dp"
+        android:background="@drawable/scoreboard"
+        app:layout_constraintBottom_toBottomOf="@+id/gameview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@null" />
+
+
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pauce"
+        android:onClick="pauseGame"/>
+
+    <ImageButton
+        android:id="@+id/restart"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/restart" />
+
+    <ImageButton
+        android:id="@+id/backtomenu"
+        android:layout_width="135dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/restart"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/backtomenu"
+        android:onClick="onClick"/>
 
 </android.support.constraint.ConstraintLayout>

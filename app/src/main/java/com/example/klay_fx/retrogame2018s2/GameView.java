@@ -19,46 +19,27 @@ import java.util.ArrayList;
 
 public class GameView extends View implements View.OnTouchListener, Runnable{
 
-    public static final int DELAY_TIME = 120;
+    public static final int DELAY_TIME = 80;
 
     Paint p;
     Game game;
 
-    // use the observer design pattern here.
+    // Use the observer design pattern here.
     ArrayList<GameOver> observer;
+
     Handler repaintHandler;
 
-    public static Bitmap birdImg1;
-    public static Bitmap birdImg2;
-    public static Bitmap birdImg3;
 
-    public static Bitmap pillarImg;
-    public static Bitmap pillarImgReversed;
-    public static Bitmap groundImg;
-
-    public static Bitmap flowerImg1;
-    public static Bitmap flowerImg2;
+    private static SpriteSheet spriteSheet;
 
     public GameView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-
+        spriteSheet = new SpriteSheet(context, attrs);
         p = new Paint();
 
-        //set up bitmap
-        birdImg1 = BitmapFactory.decodeResource(getResources(), R.drawable.bird1);
-        birdImg2 = BitmapFactory.decodeResource(getResources(), R.drawable.bird2);
-        birdImg3 = BitmapFactory.decodeResource(getResources(), R.drawable.bird3);
         this.setOnTouchListener(this);
         observer = new ArrayList<>();
         game = new Game();
-
-        pillarImg = BitmapFactory.decodeResource(getResources(), R.drawable.pipe);
-        pillarImgReversed = BitmapFactory.decodeResource(getResources(), R.drawable.pipereversed);
-
-        groundImg = BitmapFactory.decodeResource(getResources(), R.drawable.ground);
-
-        flowerImg1 = BitmapFactory.decodeResource(getResources(), R.drawable.f1);
-        flowerImg2 = BitmapFactory.decodeResource(getResources(), R.drawable.f2);
 
         repaintHandler = new Handler();
         repaintHandler.postDelayed(this, DELAY_TIME);
@@ -72,11 +53,12 @@ public class GameView extends View implements View.OnTouchListener, Runnable{
 
     public boolean step() {
         game.step();
-        if(game.isBirdHit()) {
+        this.invalidate();
+        if(Game.game_state == 3) {
+//            repaintHandler.removeCallbacks(this);
             showGameOver();
             return false;
-        } // not ending
-        this.invalidate();
+        }
         return true;
     }
 

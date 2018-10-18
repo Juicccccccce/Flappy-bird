@@ -16,8 +16,19 @@ public class Game {
     //starting position of bird
     public static final float BIRD_X = 0.4f; //?
     public static final float BIRD_Y = 0.5f;
+    public static final float GROUND_BOUND = 5.6f / 7.0f;
+    //public static final float BIRD_STEP = 0.02f;
 
-    public static final float BIRD_STEP = 0.02f;
+    // All kinds of game states
+    protected static final int GAME_READY = 0;
+    protected static final int GAME_PLAYING = 1;
+    protected static final int GAME_DYING = 2;
+    protected static final int GAME_DEAD = 3;
+
+    // Current game state
+    protected static int game_state;
+
+    // Score counter
     public static int counter = 0;
 
 
@@ -35,10 +46,12 @@ public class Game {
         pillars = new Pillars(); //what input ?
         grounds = new Grounds();
         birdHit = false;
+        game_state = GAME_READY;
+
     }
 
     /**
-     * Draw all the entities
+     * Draw all the entities.
      */
     public void draw(Canvas c, Paint p) {
         pillars.draw(c, p); // param?
@@ -47,29 +60,82 @@ public class Game {
     }
 
     /**
-     * @function checks whether the game ends, whether a new pillar need to be generated
-     * and makes the items move.
+     * @function Check the game state and call different state functions below.
      */
     public void step() {
-        if(bird.hitBy(pillars)) {
+
+        // ground is always there
+        if (grounds.size() == 0) {
+            grounds.add(new Ground(new Pos(0.5f, GROUND_BOUND)));
+            grounds.add(new Ground(new Pos(1.5f, GROUND_BOUND)));
+        } else if (grounds.size() == 1) {
+            grounds.add(new Ground(new Pos(1.45f, GROUND_BOUND)));
+        }
+        grounds.step();
+
+        switch (game_state) {
+
+            case GAME_READY:
+                ready();
+                break;
+
+            case GAME_PLAYING:
+                playing();
+                break;
+
+            case GAME_DYING:
+                dying();
+                break;
+
+            case GAME_DEAD:
+                dead();
+                break;
+
+        }
+    }
+
+    /**
+     * Different update methods according to different game states.
+     */
+    private void ready() {
+
+    }
+
+    private void playing() {
+        game_state = GAME_PLAYING;
+
+        if (bird.hitBy(pillars)) {
+            game_state = GAME_DYING;
             birdHit = true;
+
         } //multi lives?
         if (pillars.size() == 0) {
             pillars.getPillar();
         } else if (pillars.size() == 1 && pillars.get(0).pos.x < bird.pos.x) {
             pillars.getPillar();
-            counter ++;
+            counter++;
         }
-        if (grounds.size() == 0){
-            grounds.add(new Ground(new Pos(0.5f,5.6f / 7.0f)));
-            grounds.add(new Ground(new Pos(1.5f,5.6f / 7.0f)));
-        } else if (grounds.size() == 1){
-            grounds.add(new Ground(new Pos(1.45f,5.6f / 7.0f)));
-        }
-        grounds.step();
+
         bird.step();
         pillars.step();
     }
+
+    private void dying() {
+        game_state = GAME_DYING;
+
+        //bird dropping
+        float dyingBirdY = bird.step();
+        if(dyingBirdY >= GROUND_BOUND) {
+            dead();
+        }
+    }
+
+    private void dead() {
+        // bird finally dead
+        game_state = GAME_DEAD;
+    }
+
+
 
     /**
      * Return true if bird is dead.
@@ -83,8 +149,14 @@ public class Game {
         return true;
     }
 
+    /**
+     * This method is called when user 'tap' the screen - switch the game state
+     * from 'READY' to 'PLAYING'.
+     */
     public void birdFly() {
-        bird.pos.y -= BIRD_STEP;
-        bird.gravity_acc = 0.0005f;
+        if(game_state == GAME_READY || game_state == GAME_PLAYING) {
+            game_state = GAME_PLAYING;
+            Bird.v = -0.038f;
+        }
     }
 }

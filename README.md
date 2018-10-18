@@ -36,13 +36,14 @@ assignment is entirely my own work, with exceptions given below.
 
 ### Inspiration
 
-+ Game of Flappy Bird
++ [Game of Flappy Bird](https://flappybird.io/)
 
 ### Code
 
-+ Lecture example code
-+ Android Developer Guides
++ [Lecture example code](https://gitlab.cecs.anu.edu.au/u4033585/SpaceInvader2.git)
++ [Android Developer Guides](https://developer.android.com/guide/)
++ 
 
 ### Assets 
 
-+ Images from www.kisspng.com
++ [Images](https://www.kisspng.com/free/flappy-bird.html)

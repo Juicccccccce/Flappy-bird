@@ -20,7 +20,7 @@ _Add a paragraph the gives a summary of the game you implemented. Include a smal
 + [Meeting 2 - 24t/9/2018 - second meeting: change the game topic to 'flappy bird' ](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/24/24th-Sep-Second-meeting:-Change-the-game-topic-to-'Flappy-bird')
 + [Meeting 3 - 4/10/2018 - third meeting: create new git repo for new topic, decide team structure and draw basic uml](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/4/4thOct-Third-meeting:-Create-new-git-repo-for-new-topic,-decide-team-structure-and-draw-basic-UML)
 + [Meeting 4 - 16/10/2018 - forth meeting](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/16th-Oct-Forth-meeting:)
-+ [Meeting 5 - 17/10/2018 - fifth meeting:](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/17/10-Fifth-meeting:)
++ [Meeting 5 - 17/10/2018 - fifth meeting](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/17/10-Fifth-meeting:)
 + [Meeting 6 - 18/10/2018 - sixth meeting](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/18/10-Sixth-meeting:)
 
 ## Statement of Originality

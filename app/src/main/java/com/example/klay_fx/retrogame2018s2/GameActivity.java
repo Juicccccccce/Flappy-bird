@@ -29,6 +29,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     ImageButton restart;
     ImageButton backToMenu;
     ImageButton pauseButton;
+    static ImageView usage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         backToMenu.setVisibility(View.INVISIBLE);
 
         pauseButton = findViewById(R.id.pause);
+
+        usage = findViewById(R.id.usage);
 
 
         rl = findViewById(R.id.rootRL);
@@ -68,24 +71,6 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         gameView.registerGameOver(this);
     }
 
-//    final ImageView backgroundOne = (ImageView) findViewById(R.id.ground_One);
-//    final ImageView backgroundTwo = (ImageView) findViewById(R.id.ground_Two);
-//
-//    final ValueAnimator animator = ValueAnimator.ofFloat(0.0f, 1.0f);
-//    animator.setRepeatCount(ValueAnimator.INFINITE);
-//    animator.setInterpolator(new LinearInterpolator());
-//    animator.setDuration(10000L);
-//    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//        @Override
-//        public void onAnimationUpdate(ValueAnimator animation) {
-//            final float progress = (float) animation.getAnimatedValue();
-//            final float width = backgroundOne.getWidth();
-//            final float translationX = width * progress;
-//            backgroundOne.setTranslationX(translationX);
-//            backgroundTwo.setTranslationX(translationX - width);
-//        }
-//    });
-//animator.start();
 
     @Override
     public void gameOver() {

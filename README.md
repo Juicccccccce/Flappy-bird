@@ -10,7 +10,7 @@
 _Add a paragraph the gives a summary of the game you implemented. Include a small screen shot here._
 
 ## Design Documentation 
-+ [Design Summary](designsummary)
++ [Design Summary](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/design-summary)
 + [Uml diagram](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/UML-diagram)
 + [Testing Summary](testingsummary)
 

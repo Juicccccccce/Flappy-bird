@@ -138,7 +138,7 @@ public class Game {
         }
     }
 
-    private void dead() {
+    public void dead() {
         // bird finally dead
         game_state = GAME_DEAD;
     }

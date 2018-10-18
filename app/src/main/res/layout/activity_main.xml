@@ -23,8 +23,8 @@
 
     <ImageView
         android:id="@+id/imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -40,7 +40,7 @@
         android:id="@+id/imageView"
         android:layout_width="218dp"
         android:layout_height="237dp"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -55,10 +55,9 @@
         app:srcCompat="@drawable/logo" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
+        android:id="@+id/startButton"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
@@ -79,8 +78,8 @@
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginLeft="50dp"
@@ -88,18 +87,20 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/ranking_button"
+        android:onClick="viewRank"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.88"
         app:srcCompat="@null" />
 
+
     <com.example.klay_fx.retrogame2018s2.Entry_View
-        android:id="@+id/entry"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    android:id="@+id/entry"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
 
 
 </android.support.constraint.ConstraintLayout>

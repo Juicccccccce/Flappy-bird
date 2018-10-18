@@ -34,12 +34,13 @@ assignment is entirely my own work, with exceptions given below.
 
 ### Inspiration
 
-_add references from where you obtained the idea form the game and ideas about aspects of the game_
++ Game of Flappy Bird
 
 ### Code
 
-_reference all the code or ideas for code from other sources_
++ Lecture example code
++ Android Developer Guides
 
 ### Assets 
 
-_this includes images, sounds, etc._
++ Images from www.kisspng.com

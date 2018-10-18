@@ -43,6 +43,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     static ImageView usage;
     TextView bestScore;
     TextView currentScore;
+    ImageButton add;
 
 
     @Override
@@ -74,6 +75,9 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         pauseButton = findViewById(R.id.pause);
 
         usage = findViewById(R.id.usage);
+
+        add = findViewById(R.id.add);
+        add.setVisibility(View.INVISIBLE);
 
 
         rl = findViewById(R.id.rootRL);

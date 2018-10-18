@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewRank(View view) {
+        load();
         Intent intent = new Intent(this, RankActivity.class);
         startActivity(intent);
     }

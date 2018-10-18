@@ -113,7 +113,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         restart.setVisibility(View.VISIBLE);
         backToMenu.setVisibility(View.VISIBLE);
         gameover.setVisibility(View.VISIBLE);
-        bestScore.setText(""+MainActivity.score[0]);
+        bestScore.setText((Game.counter > MainActivity.score[0]) ? ""+Game.counter : ""+MainActivity.score[0]);
         bestScore.setVisibility(View.VISIBLE);
         currentScore.setText(String.valueOf(Game.counter));
         currentScore.setVisibility(View.VISIBLE);

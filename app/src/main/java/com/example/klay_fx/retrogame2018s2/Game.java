@@ -143,54 +143,6 @@ public class Game {
         game_state = GAME_DEAD;
     }
 
-//    public static void save(){
-//        scoreList.add(counter);
-//        Collections.sort(scoreList);
-//        if (scoreList.size()>3){
-//            scoreList.remove(0);
-//        }
-//
-//        for (Integer i : scoreList) {
-//            System.out.println(i);
-//        }
-//
-//        if (scoreList.size()==1) {
-//            prefs.putInt("1", scoreList.get(0));
-//            prefs.putInt("2",0);
-//            prefs.putInt("3",0);
-//        } else if (scoreList.size()==2){
-//            prefs.putInt("1", scoreList.get(1));
-//            prefs.putInt("2", scoreList.get(0));
-//            prefs.putInt("3",0);
-//        } else if (scoreList.size()==3){
-//            prefs.putInt("1", scoreList.get(2));
-//            prefs.putInt("2", scoreList.get(1));
-//            prefs.putInt("3", scoreList.get(0));
-//        }
-//    }
-//
-//    public static void load(){
-//        int int1 = prefs.getInt("1",0);
-//        int int2 = prefs.getInt("2",0);
-//        int int3 = prefs.getInt("3",0);
-//        if (scoreList.size()!=3){
-//            scoreList.add(int1);
-//            scoreList.add(int2);
-//            scoreList.add(int3);
-//        } else {
-//            scoreList.clear();
-//            scoreList.add(int1);
-//            scoreList.add(int2);
-//            scoreList.add(int3);
-//
-//        }
-//
-//        for (Integer i : scoreList) {
-//            System.out.println(i);
-//        }
-//    }
-
-
 
     /**
      * Return true if bird is dead.

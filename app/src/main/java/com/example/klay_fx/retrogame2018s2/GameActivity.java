@@ -39,7 +39,10 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     ImageButton restart;
     ImageButton backToMenu;
     ImageButton pauseButton;
+    ImageView gameover;
     static ImageView usage;
+    TextView bestScore;
+    TextView currentScore;
 
 
     @Override
@@ -50,6 +53,9 @@ public class GameActivity extends AppCompatActivity implements GameOver {
 
 //        MainActivity.load();
 
+        gameover = findViewById(R.id.imageView5);
+        gameover.setVisibility(View.INVISIBLE);
+
         scoreboard = findViewById(R.id.imageView2);
         scoreboard.setVisibility(View.INVISIBLE);
 
@@ -58,6 +64,12 @@ public class GameActivity extends AppCompatActivity implements GameOver {
 
         backToMenu = findViewById(R.id.backtomenu);
         backToMenu.setVisibility(View.INVISIBLE);
+
+        currentScore = findViewById(R.id.textView4);
+        currentScore.setVisibility(View.INVISIBLE);
+
+        bestScore = findViewById(R.id.textView5);
+        bestScore.setVisibility(View.INVISIBLE);
 
         pauseButton = findViewById(R.id.pause);
 
@@ -93,7 +105,12 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         scoreboard.setVisibility(View.VISIBLE);
         restart.setVisibility(View.VISIBLE);
         backToMenu.setVisibility(View.VISIBLE);
-
+        gameover.setVisibility(View.VISIBLE);
+        bestScore.setText(String.valueOf(MainActivity.prefs.getInt("1",0)));
+        bestScore.setVisibility(View.VISIBLE);
+        currentScore.setText(String.valueOf(Game.counter));
+        currentScore.setVisibility(View.VISIBLE);
+        counter.setVisibility(View.INVISIBLE);
 
 //        gameView.repaintHandler.removeCallbacks(gameView);
 

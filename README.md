@@ -12,7 +12,7 @@ _Add a paragraph the gives a summary of the game you implemented. Include a smal
 ## Design Documentation 
 + [Design Summary](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/design-summary)
 + [Uml diagram](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/UML-diagram)
-+ [Testing Summary](testingsummary)
++ [Testing Summary](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/Testing-Summary)
 
 ## Minuted Meetings
 + [Meeting 1 - 4/10/2018 - decide team structure and create gitlab repository and draw the drafed UML](meeting1)

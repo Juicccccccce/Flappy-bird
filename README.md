@@ -9,7 +9,7 @@
 + [Overview](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/Overview)
 
 _Add a paragraph the gives a summary of the game you implemented. Include a small screen shot here._
-! [Board](app/src/main/res/drawable/bg)
+![Board](app/src/main/res/drawable/bg.png)
 
 ## Design Documentation 
 + [Design Summary](https://gitlab.cecs.anu.edu.au/u6234544/RetroGame2018s2/wikis/design-summary)

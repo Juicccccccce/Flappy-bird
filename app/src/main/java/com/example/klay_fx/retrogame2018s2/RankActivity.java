@@ -5,28 +5,17 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class RankActivity extends AppCompatActivity {
-    TextView rank1;
-    TextView rank2;
-    TextView rank3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rank);
 
-        rank1 = findViewById(R.id.textView);
-        rank2 = findViewById(R.id.textView2);
-        rank3 = findViewById(R.id.textView3);
-        Bespoke.load();
-        if (Bespoke.scorelist.size() == 0){
-            Bespoke.scorelist.add(0);
-            Bespoke.scorelist.add(0);
-            Bespoke.scorelist.add(0);
-        }
-        rank1.setText(String.valueOf(Bespoke.scorelist.get(0)));
-        rank2.setText(String.valueOf(Bespoke.scorelist.get(1)));
-        rank3.setText(String.valueOf(Bespoke.scorelist.get(2)));
+        TextView tv1 = findViewById(R.id.textView);
+        TextView tv2 = findViewById(R.id.textView2);
+        TextView tv3 = findViewById(R.id.textView3);
+        tv1.setText(String.valueOf(Game.prefs.getInt("1",0)));
+        tv2.setText(String.valueOf(Game.prefs.getInt("2",0)));
+        tv3.setText(String.valueOf(Game.prefs.getInt("3",0)));
     }
-
-
 }

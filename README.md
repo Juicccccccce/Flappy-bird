@@ -11,7 +11,7 @@ _Add a paragraph the gives a summary of the game you implemented. Include a smal
 
 ## Design Documentation 
 + [Design Summary](designsummary)
-+ [UML diagram](umldiagram)
++ [Uml diagram](umldiagram)
 + [Testing Summary](testingsummary)
 
 ## Minuted Meetings

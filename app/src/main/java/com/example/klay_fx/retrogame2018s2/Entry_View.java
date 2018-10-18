@@ -19,7 +19,7 @@ public class Entry_View extends View implements Runnable{
         public static float birdY = 0.46f;
         public static final float BirdSTep = 0.01f;
         Handler timer;
-        int direction = 0;
+        boolean direction = true;//downward
 
     public Entry_View(Context context, @Nullable AttributeSet attri) {
         super(context,attri);
@@ -40,12 +40,12 @@ public class Entry_View extends View implements Runnable{
 
     @Override
     public void run() {
-        if(birdY>0.5) {
-            direction = 1;
+        if(birdY > 0.5) {
+            direction = false;
         } else if (birdY < 0.4) {
-            direction = 0;
+            direction = true;
         }
-        if (direction == 0) {
+        if (direction) {
             birdY += BirdSTep;
         } else {
             birdY -= BirdSTep;

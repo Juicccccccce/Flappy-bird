@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.InputStream;
+import java.util.prefs.Preferences;
 
 /**
  * @author Xuan Feng, Yutong Wang
@@ -31,11 +32,14 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     ImageButton pauseButton;
     static ImageView usage;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        Game.load();
 
         scoreboard = findViewById(R.id.imageView2);
         scoreboard.setVisibility(View.INVISIBLE);
@@ -75,6 +79,8 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     @Override
     public void gameOver() {
 //        Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_SHORT).show();
+        System.out.println("hi");
+        Game.save();
         scoreboard.setVisibility(View.VISIBLE);
         restart.setVisibility(View.VISIBLE);
         backToMenu.setVisibility(View.VISIBLE);

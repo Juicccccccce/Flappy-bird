@@ -4,6 +4,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.prefs.Preferences;
+
 /**
  * Game - this is the model of the main game.
  *
@@ -32,6 +36,9 @@ public class Game {
     // Score counter
     public static int counter = 0;
 
+    //Preferences
+    static Preferences prefs;
+    public static ArrayList<Integer> scoreList = new ArrayList<>();
 
 
     //Entities in the game
@@ -48,7 +55,7 @@ public class Game {
         grounds = new Grounds();
         birdHit = false;
         game_state = GAME_READY;
-
+        prefs = Preferences.userNodeForPackage(Game.class);
     }
 
     /**
@@ -134,6 +141,53 @@ public class Game {
     private void dead() {
         // bird finally dead
         game_state = GAME_DEAD;
+    }
+
+    public static void save(){
+        scoreList.add(counter);
+        Collections.sort(scoreList);
+        if (scoreList.size()>3){
+            scoreList.remove(0);
+        }
+
+        for (Integer i : scoreList) {
+            System.out.println(i);
+        }
+
+        if (scoreList.size()==1) {
+            prefs.putInt("1", scoreList.get(0));
+            prefs.putInt("2",0);
+            prefs.putInt("3",0);
+        } else if (scoreList.size()==2){
+            prefs.putInt("1", scoreList.get(1));
+            prefs.putInt("2", scoreList.get(0));
+            prefs.putInt("3",0);
+        } else if (scoreList.size()==3){
+            prefs.putInt("1", scoreList.get(2));
+            prefs.putInt("2", scoreList.get(1));
+            prefs.putInt("3", scoreList.get(0));
+        }
+    }
+
+    public static void load(){
+        int int1 = prefs.getInt("1",0);
+        int int2 = prefs.getInt("2",0);
+        int int3 = prefs.getInt("3",0);
+        if (scoreList.size()!=3){
+            scoreList.add(int1);
+            scoreList.add(int2);
+            scoreList.add(int3);
+        } else {
+            scoreList.clear();
+            scoreList.add(int1);
+            scoreList.add(int2);
+            scoreList.add(int3);
+
+        }
+
+        for (Integer i : scoreList) {
+            System.out.println(i);
+        }
     }
 
 

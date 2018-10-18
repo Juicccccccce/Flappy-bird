@@ -2,6 +2,7 @@ package com.example.klay_fx.retrogame2018s2;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.view.View;
 
 /**
  * Game - this is the model of the main game.
@@ -156,6 +157,7 @@ public class Game {
     public void birdFly() {
         if(game_state == GAME_READY || game_state == GAME_PLAYING) {
             game_state = GAME_PLAYING;
+            GameActivity.usage.setVisibility(View.INVISIBLE);
             Bird.v = -0.038f;
         }
     }

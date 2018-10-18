@@ -62,7 +62,7 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/pause"
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginLeft="16dp"
@@ -103,5 +103,16 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/backtomenu"
         android:onClick="onClick"/>
+
+    <ImageView
+        android:id="@+id/usage"
+        android:layout_width="110dp"
+        android:layout_height="129dp"
+        android:layout_marginLeft="232dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="232dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/usage" />
 
 </android.support.constraint.ConstraintLayout>

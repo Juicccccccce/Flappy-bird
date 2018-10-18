@@ -28,6 +28,8 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     ImageView scoreboard;
     ImageButton restart;
     ImageButton backToMenu;
+    ImageButton pauseButton;
+    static ImageView usage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,10 @@ public class GameActivity extends AppCompatActivity implements GameOver {
 
         backToMenu = findViewById(R.id.backtomenu);
         backToMenu.setVisibility(View.INVISIBLE);
+
+        pauseButton = findViewById(R.id.pause);
+
+        usage = findViewById(R.id.usage);
 
 
         rl = findViewById(R.id.rootRL);
@@ -65,24 +71,6 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         gameView.registerGameOver(this);
     }
 
-//    final ImageView backgroundOne = (ImageView) findViewById(R.id.ground_One);
-//    final ImageView backgroundTwo = (ImageView) findViewById(R.id.ground_Two);
-//
-//    final ValueAnimator animator = ValueAnimator.ofFloat(0.0f, 1.0f);
-//    animator.setRepeatCount(ValueAnimator.INFINITE);
-//    animator.setInterpolator(new LinearInterpolator());
-//    animator.setDuration(10000L);
-//    animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-//        @Override
-//        public void onAnimationUpdate(ValueAnimator animation) {
-//            final float progress = (float) animation.getAnimatedValue();
-//            final float width = backgroundOne.getWidth();
-//            final float translationX = width * progress;
-//            backgroundOne.setTranslationX(translationX);
-//            backgroundTwo.setTranslationX(translationX - width);
-//        }
-//    });
-//animator.start();
 
     @Override
     public void gameOver() {
@@ -104,9 +92,11 @@ public class GameActivity extends AppCompatActivity implements GameOver {
 
         if(!isPause) {
             isPause = true;
+            pauseButton.setImageResource(R.drawable.resume);
             gameView.repaintHandler.removeCallbacks(gameView);
         } else {
             isPause = false;
+            pauseButton.setImageResource(R.drawable.pauce);
             gameView.repaintHandler.postDelayed(gameView, 100);
         }
     }
@@ -121,13 +111,12 @@ public class GameActivity extends AppCompatActivity implements GameOver {
             case R.id.restart:
                 // TODO: RESTART FUNCTION
                 Intent intent_restart = new Intent(this,GameActivity.class);
+                finish();
                 startActivity(intent_restart);
                 break;
             case R.id.backtomenu:
-                Intent intent_menu = new Intent(this,MainActivity.class);
-                startActivity(intent_menu);
-//                setResult(RESULT_OK);
-//                finish();
+                setResult(RESULT_OK);
+                finish();
                 break;
         }
     }

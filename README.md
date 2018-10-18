@@ -42,7 +42,6 @@ assignment is entirely my own work, with exceptions given below.
 
 + [Lecture example code](https://gitlab.cecs.anu.edu.au/u4033585/SpaceInvader2.git)
 + [Android Developer Guides](https://developer.android.com/guide/)
-+ 
 
 ### Assets 
 

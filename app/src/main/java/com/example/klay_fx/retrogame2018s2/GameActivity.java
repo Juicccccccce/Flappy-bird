@@ -124,8 +124,10 @@ public class GameActivity extends AppCompatActivity implements GameOver {
                 startActivity(intent_restart);
                 break;
             case R.id.backtomenu:
-                setResult(RESULT_OK);
-                finish();
+                Intent intent_menu = new Intent(this,MainActivity.class);
+                startActivity(intent_menu);
+//                setResult(RESULT_OK);
+//                finish();
                 break;
         }
     }

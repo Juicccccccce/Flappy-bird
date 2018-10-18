@@ -23,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+    public void showRank(View view) {
+        Intent intent_rank = new Intent(this,RankActivity.class);
+        startActivity(intent_rank);
+    }
 
 
     public void playGame(View view) {

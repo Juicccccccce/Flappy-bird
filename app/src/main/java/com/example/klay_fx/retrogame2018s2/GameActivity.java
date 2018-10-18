@@ -1,9 +1,11 @@
 package com.example.klay_fx.retrogame2018s2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -11,7 +13,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.prefs.Preferences;
 
@@ -35,6 +43,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     static ImageView usage;
     TextView bestScore;
     TextView currentScore;
+    ImageButton add;
 
 
     @Override
@@ -43,7 +52,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        MainActivity.load();
+//        MainActivity.load();
 
         gameover = findViewById(R.id.imageView5);
         gameover.setVisibility(View.INVISIBLE);
@@ -66,6 +75,9 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         pauseButton = findViewById(R.id.pause);
 
         usage = findViewById(R.id.usage);
+
+        add = findViewById(R.id.add);
+        add.setVisibility(View.INVISIBLE);
 
 
         rl = findViewById(R.id.rootRL);
@@ -93,7 +105,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     public void gameOver() {
 //        Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_SHORT).show();
         System.out.println("hi");
-        MainActivity.save();
+//        MainActivity.save();
         scoreboard.setVisibility(View.VISIBLE);
         restart.setVisibility(View.VISIBLE);
         backToMenu.setVisibility(View.VISIBLE);
@@ -103,10 +115,39 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         currentScore.setText(String.valueOf(Game.counter));
         currentScore.setVisibility(View.VISIBLE);
         counter.setVisibility(View.INVISIBLE);
+        add.setVisibility(View.VISIBLE);
 
 //        gameView.repaintHandler.removeCallbacks(gameView);
 
     }
+
+    //TODO: TEST
+    public void writeToFile(View view) {
+        try {
+            FileOutputStream fileout;
+            try {
+                fileout = openFileOutput("sayhiiii.txt", MODE_APPEND);
+            } catch (FileNotFoundException e) {
+                fileout = openFileOutput("sayhiii.txt", MODE_PRIVATE);
+            }
+            OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+            outputWriter.write("" + Game.counter +"\n");
+            outputWriter.close();
+
+            //display file saved message
+            Toast.makeText(getBaseContext(), "File saved successfully!",
+                    Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+//    // Read text from file
+//    public void readBtn(View v) {
+//
+//    }
 
     /**
      * Handle the pause button click to pause and continue the game.

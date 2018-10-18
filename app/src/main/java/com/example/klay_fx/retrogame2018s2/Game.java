@@ -74,10 +74,10 @@ public class Game {
 
         // ground is always there
         if (grounds.size() == 0) {
-            grounds.add(new Ground(new Pos(0.5f, GROUND_BOUND)));
-            grounds.add(new Ground(new Pos(1.5f, GROUND_BOUND)));
+            grounds.add(new Ground(new Pos(0.5f, 1 - Ground.GROUNDHEIGHT)));
+            grounds.add(new Ground(new Pos(1.5f, 1 - Ground.GROUNDHEIGHT)));
         } else if (grounds.size() == 1) {
-            grounds.add(new Ground(new Pos(1.45f, GROUND_BOUND)));
+            grounds.add(new Ground(new Pos(1.45f, 1 - Ground.GROUNDHEIGHT)));
         }
         grounds.step();
 

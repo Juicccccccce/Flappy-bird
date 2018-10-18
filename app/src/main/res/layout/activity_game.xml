@@ -16,8 +16,8 @@
 
     <com.example.klay_fx.retrogame2018s2.GameView
         android:id="@+id/gameview"
-        android:layout_width="384dp"
-        android:layout_height="564dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,13 +27,13 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="350dp"
-        android:layout_height="300dp"
+        android:layout_width="325dp"
+        android:layout_height="62dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/gameover" />
 
     <TextView
@@ -60,14 +60,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="136dp"
+        android:layout_height="137dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="200dp"
         android:background="@drawable/scoreboard"
         app:layout_constraintBottom_toBottomOf="@+id/gameview"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,9 +96,9 @@
         android:id="@+id/restart"
         android:layout_width="135dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
         android:onClick="onClick"
         android:scaleType="fitXY"
@@ -112,14 +112,15 @@
         android:layout_height="55dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
+        android:onClick="onClick"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toEndOf="@+id/restart"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/backtomenu"
-        android:onClick="onClick"/>
+        app:srcCompat="@drawable/backtomenu" />
 
     <ImageView
         android:id="@+id/usage"
@@ -136,32 +137,51 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="25dp"
+        android:text=""
         android:textSize="30dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/imageView2"
+        app:layout_constraintLeft_toLeftOf="@id/imageView2"
+        app:layout_constraintTop_toTopOf="@id/imageView2"
         app:layout_constraintVertical_bias="0.55" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginLeft="58dp"
+        android:layout_marginBottom="5dp"
+        android:text=""
         android:textSize="30dp"
         android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/imageView2"
+        app:layout_constraintLeft_toLeftOf="@id/imageView2"
+
+
+        app:layout_constraintBottom_toBottomOf="@id/imageView2"
+
+         />
+
+    <!--app:layout_constraintStart_toStartOf="@id/imageView2"-->
+    <!--app:layout_constraintTop_toTopOf="parent"-->
+
+    <ImageButton
+        android:id="@+id/add"
+        android:layout_width="257dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="76dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginStart="64dp"
+        android:background="@android:color/transparent"
+        android:onClick="writeToFile"
+        android:scaleType="fitXY"
+        android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68" />
+        app:srcCompat="@drawable/add" />
 
 </android.support.constraint.ConstraintLayout>

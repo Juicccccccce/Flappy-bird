@@ -55,7 +55,7 @@
         app:srcCompat="@drawable/logo" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/startButton"
         android:layout_width="75dp"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"

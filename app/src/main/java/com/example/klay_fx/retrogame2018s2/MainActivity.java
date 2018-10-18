@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
     static Preferences prefs = Preferences.userNodeForPackage(Game.class);
     public static ArrayList<Integer> scoreList = new ArrayList<>();
-
     public static int[] score = new int[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        load();
     }
 
 //    public void showRank(View view) {
@@ -53,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewRank(View view) {
+        Intent intent = new Intent(this, RankActivity.class);
+        startActivity(intent);
+    }
+
+    public void load() {
         //reading text from file
         try {
             FileInputStream fileIn=openFileInput("sayhiiii.txt");
@@ -97,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(this, RankActivity.class);
-        startActivity(intent);
     }
 
     public static void save(){
@@ -127,24 +130,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static void load(){
-        int int1 = prefs.getInt("1",0);
-        int int2 = prefs.getInt("2",0);
-        int int3 = prefs.getInt("3",0);
-        if (scoreList.size()!=3){
-            scoreList.add(int1);
-            scoreList.add(int2);
-            scoreList.add(int3);
-        } else {
-            scoreList.clear();
-            scoreList.add(int1);
-            scoreList.add(int2);
-            scoreList.add(int3);
-
-        }
-
-        for (Integer i : scoreList) {
-            System.out.println(i);
-        }
-    }
+//    public static void load(){
+//        int int1 = prefs.getInt("1",0);
+//        int int2 = prefs.getInt("2",0);
+//        int int3 = prefs.getInt("3",0);
+//        if (scoreList.size()!=3){
+//            scoreList.add(int1);
+//            scoreList.add(int2);
+//            scoreList.add(int3);
+//        } else {
+//            scoreList.clear();
+//            scoreList.add(int1);
+//            scoreList.add(int2);
+//            scoreList.add(int3);
+//
+//        }
+//
+//        for (Integer i : scoreList) {
+//            System.out.println(i);
+//        }
+//    }
 }

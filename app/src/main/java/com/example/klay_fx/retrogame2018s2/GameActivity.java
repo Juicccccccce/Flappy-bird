@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -44,6 +45,8 @@ public class GameActivity extends AppCompatActivity implements GameOver {
     TextView bestScore;
     TextView currentScore;
     ImageButton add;
+
+
 
 
     @Override
@@ -110,7 +113,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         restart.setVisibility(View.VISIBLE);
         backToMenu.setVisibility(View.VISIBLE);
         gameover.setVisibility(View.VISIBLE);
-        bestScore.setText(String.valueOf(MainActivity.prefs.getInt("1",0)));
+        bestScore.setText((Game.counter > MainActivity.score[0]) ? ""+Game.counter : ""+MainActivity.score[0]);
         bestScore.setVisibility(View.VISIBLE);
         currentScore.setText(String.valueOf(Game.counter));
         currentScore.setVisibility(View.VISIBLE);
@@ -135,7 +138,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
             outputWriter.close();
 
             //display file saved message
-            Toast.makeText(getBaseContext(), "File saved successfully!",
+            Toast.makeText(getBaseContext(), "Score saved successfully!",
                     Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
@@ -143,6 +146,8 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         }
 
     }
+
+
 
 //    // Read text from file
 //    public void readBtn(View v) {

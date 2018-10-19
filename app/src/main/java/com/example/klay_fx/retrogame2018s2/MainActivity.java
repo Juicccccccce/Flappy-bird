@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
 
     static Preferences prefs = Preferences.userNodeForPackage(Game.class);
     public static ArrayList<Integer> scoreList = new ArrayList<>();
-
     public static int[] score = new int[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        load();
     }
 
 //    public void showRank(View view) {
@@ -53,28 +53,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewRank(View view) {
+        load();
+        Intent intent = new Intent(this, RankActivity.class);
+        startActivity(intent);
+    }
+
+    public void load() {
         //reading text from file
         try {
             FileInputStream fileIn=openFileInput("sayhiiii.txt");
             InputStreamReader inputRead= new InputStreamReader(fileIn);
 
             BufferedReader bufferedReader = new BufferedReader(inputRead);
-//            StringBuilder sb = new StringBuilder();
             String line;
             int max1 = 0;
             int max2 = 0;
             int max3 = 0;
             while ((line = bufferedReader.readLine()) != null) {
-//                System.out.println("------------------->!!!----->" + line);
                 int x = Integer.parseInt(line);
                 if(x >= max1) {
-                    System.out.println(x + ">=" + max1);
+                    max3 = max2;
+                    max2 = max1;
                     max1 = x;
                 } else if(x >= max2) {
-                    System.out.println(x + ">=" + max2);
+                    max3 = max2;
                     max2 = x;
                 } else if(x >= max3) {
-                    System.out.println(x + ">=" + max3);
                     max3 = x;
                 }
             }
@@ -84,21 +88,10 @@ public class MainActivity extends AppCompatActivity {
             score[2] = max3;
 
             inputRead.close();
-//            score[0] = sb.toString();
-//            System.out.println("=====================" + score[0] + "=======================");
-
-//                System.out.println("=====================" + score[1] + "=======================");
-
-//                System.out.println("=====================" + score[2] + "=======================");
-
-//            textmsg.setText(s);
-
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(this, RankActivity.class);
-        startActivity(intent);
     }
 
     public static void save(){
@@ -124,27 +117,6 @@ public class MainActivity extends AppCompatActivity {
             prefs.putInt("1", scoreList.get(2));
             prefs.putInt("2", scoreList.get(1));
             prefs.putInt("3", scoreList.get(0));
-        }
-    }
-
-    public static void load(){
-        int int1 = prefs.getInt("1",0);
-        int int2 = prefs.getInt("2",0);
-        int int3 = prefs.getInt("3",0);
-        if (scoreList.size()!=3){
-            scoreList.add(int1);
-            scoreList.add(int2);
-            scoreList.add(int3);
-        } else {
-            scoreList.clear();
-            scoreList.add(int1);
-            scoreList.add(int2);
-            scoreList.add(int3);
-
-        }
-
-        for (Integer i : scoreList) {
-            System.out.println(i);
         }
     }
 }

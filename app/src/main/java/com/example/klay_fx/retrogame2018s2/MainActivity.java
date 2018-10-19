@@ -25,7 +25,7 @@ import java.util.prefs.Preferences;
 
 
 /**
- * @author Xuan Feng
+ * @author Xuan Feng, Yutong Wang
  */
 public class MainActivity extends AppCompatActivity {
 

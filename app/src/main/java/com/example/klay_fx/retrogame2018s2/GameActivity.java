@@ -106,9 +106,7 @@ public class GameActivity extends AppCompatActivity implements GameOver {
 
     @Override
     public void gameOver() {
-//        Toast.makeText(getApplicationContext(), "GAME OVER", Toast.LENGTH_SHORT).show();
         System.out.println("hi");
-//        MainActivity.save();
         scoreboard.setVisibility(View.VISIBLE);
         restart.setVisibility(View.VISIBLE);
         backToMenu.setVisibility(View.VISIBLE);
@@ -120,7 +118,6 @@ public class GameActivity extends AppCompatActivity implements GameOver {
         counter.setVisibility(View.INVISIBLE);
         add.setVisibility(View.VISIBLE);
 
-//        gameView.repaintHandler.removeCallbacks(gameView);
 
     }
 

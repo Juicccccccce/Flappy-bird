@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 
 /**
+ * The flower (bird eater)
  * @author Yutong Wang
  */
 

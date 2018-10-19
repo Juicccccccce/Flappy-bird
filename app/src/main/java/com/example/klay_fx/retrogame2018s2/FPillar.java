@@ -3,6 +3,10 @@ package com.example.klay_fx.retrogame2018s2;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
+/**
+ * @author Xuan Feng,Yutong Wang
+ */
+
 public class FPillar extends Pillar {
 
     Pos pillarPos;

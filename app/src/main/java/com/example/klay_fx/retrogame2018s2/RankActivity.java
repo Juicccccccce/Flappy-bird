@@ -4,6 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+/**
+ * @author Xinli Xu
+ */
+
 public class RankActivity extends AppCompatActivity {
 
     @Override

@@ -11,6 +11,8 @@ import java.util.Random;
 
 
 /**
+ * The pillar can either be a normal pillar or a pillar with flower(bird eater).
+ * The show up of these two pillars is random.
  * @author Xuan Feng, Yutong Wang
  */
 public class Pillar extends Item {

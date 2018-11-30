@@ -7,6 +7,11 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * This class load all the images needed.
+ * @author Yutong Wang
+ */
+
 public class SpriteSheet extends View {
 
     protected static Bitmap bird1;

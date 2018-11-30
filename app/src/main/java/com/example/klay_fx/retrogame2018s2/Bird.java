@@ -6,6 +6,7 @@ import android.graphics.Paint;
 
 
 /**
+ * The bird object(the player)
  * @author Xuan Feng, Xinli Xu, Yutong Wang.
  */
 public class Bird extends Item {

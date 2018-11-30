@@ -14,7 +14,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 /***
- * This class is created by Yutong Wang on 16/10/2018.
+ * @author Yutong Wang
  */
 
 public class GameView extends View implements View.OnTouchListener, Runnable{
